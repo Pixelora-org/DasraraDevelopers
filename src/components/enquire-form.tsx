@@ -35,10 +35,10 @@ export function EnquireForm({ compact = false }: { compact?: boolean }) {
 
   if (sent) {
     return (
-      <div className="border border-gold/40 bg-paper/60 px-6 py-10 text-center">
-        <p className="font-display text-3xl text-forest">We have your request.</p>
-        <p className="mt-3 text-sm leading-6 text-muted">
-          WhatsApp and email should have opened. If they did not, call {site.phones[0].label}.
+      <div className="border border-gold bg-panel px-6 py-10 text-center">
+        <p className="font-display text-3xl text-gold">Request sent.</p>
+        <p className="mt-3 text-sm leading-6 text-ivory/70">
+          WhatsApp should have opened. If it did not, call {site.phones[0].label}.
         </p>
       </div>
     );
@@ -49,32 +49,34 @@ export function EnquireForm({ compact = false }: { compact?: boolean }) {
       <Field label="Full name" name="name" required />
       <Field label="Phone" name="phone" type="tel" required />
       <Field label="Email" name="email" type="email" />
-      <label className="block text-[0.68rem] tracking-[0.16em] uppercase text-muted">
+      <label className="block text-[0.68rem] tracking-[0.16em] uppercase text-gold">
         Villa type
         <select
           name="villa"
-          className="mt-2 w-full border border-ink/15 bg-transparent px-4 py-3 text-sm tracking-normal text-ink outline-none focus:border-copper"
+          className="mt-2 w-full border border-gold/35 bg-void px-4 py-3 text-base tracking-normal text-ivory outline-none focus:border-gold"
         >
           {types.map((t) => (
-            <option key={t}>{t}</option>
+            <option key={t} className="bg-void">
+              {t}
+            </option>
           ))}
         </select>
       </label>
-      <label className={`${compact ? "" : "sm:col-span-2"} block text-[0.68rem] tracking-[0.16em] uppercase text-muted`}>
+      <label className={`${compact ? "" : "sm:col-span-2"} block text-[0.68rem] tracking-[0.16em] uppercase text-gold`}>
         Message
         <textarea
           name="message"
           rows={4}
           placeholder="Preferred day for a site visit"
-          className="mt-2 w-full border border-ink/15 bg-transparent px-4 py-3 text-sm tracking-normal text-ink outline-none placeholder:text-ink/30 focus:border-copper"
+          className="mt-2 w-full border border-gold/35 bg-void px-4 py-3 text-base tracking-normal text-ivory outline-none placeholder:text-ivory/30 focus:border-gold"
         />
       </label>
       <div className={compact ? "" : "sm:col-span-2"}>
         <button
           type="submit"
-          className="w-full bg-forest px-6 py-3.5 text-[0.72rem] tracking-[0.2em] uppercase text-cream transition-colors hover:bg-forest-deep"
+          className="w-full bg-gold px-6 py-3.5 text-[0.72rem] tracking-[0.22em] uppercase text-void hover:bg-gold-bright"
         >
-          Request a site visit
+          Book site visit on WhatsApp
         </button>
       </div>
     </form>
@@ -93,13 +95,13 @@ function Field({
   required?: boolean;
 }) {
   return (
-    <label className="block text-[0.68rem] tracking-[0.16em] uppercase text-muted">
+    <label className="block text-[0.68rem] tracking-[0.16em] uppercase text-gold">
       {label}
       <input
         name={name}
         type={type}
         required={required}
-        className="mt-2 w-full border border-ink/15 bg-transparent px-4 py-3 text-sm tracking-normal text-ink outline-none focus:border-copper"
+        className="mt-2 w-full border border-gold/35 bg-void px-4 py-3 text-base tracking-normal text-ivory outline-none focus:border-gold"
       />
     </label>
   );

@@ -26,12 +26,12 @@ export function Lightbox({
   return (
     <button
       type="button"
-      className="fixed inset-0 z-[80] flex items-center justify-center bg-ink/92 p-4"
+      className="fixed inset-0 z-[80] flex items-center justify-center bg-void/92 p-3 sm:p-4"
       onClick={onClose}
       aria-label="Close plan"
     >
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={src} alt={alt} className="max-h-[90vh] max-w-full object-contain" />
+      <img src={src} alt={alt} className="max-h-[80dvh] w-full max-w-full object-contain" />
     </button>
   );
 }

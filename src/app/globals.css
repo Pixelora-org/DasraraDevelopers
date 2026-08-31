@@ -1,74 +1,95 @@
 @import "tailwindcss";
 
 :root {
-  --ink: #14110e;
-  --forest: #1b2b1e;
-  --forest-deep: #0f1a12;
-  --copper: #c05c33;
-  --copper-deep: #9a4524;
-  --gold: #c4a06a;
-  --cream: #f6f1e8;
-  --paper: #ede4d4;
-  --brown: #3d2e22;
-  --muted: #6b5c4d;
+  --void: #0b0b0b;
+  --panel: #13100c;
+  --gold: #d4af37;
+  --gold-bright: #f0d78c;
+  --ivory: #f6efe0;
+  --maroon: #7a1f2b;
+  --maroon-deep: #4c1018;
+  --muted: #a8946c;
 }
 
 @theme inline {
-  --color-ink: var(--ink);
-  --color-forest: var(--forest);
-  --color-forest-deep: var(--forest-deep);
-  --color-copper: var(--copper);
-  --color-copper-deep: var(--copper-deep);
+  --color-void: var(--void);
+  --color-panel: var(--panel);
   --color-gold: var(--gold);
-  --color-cream: var(--cream);
-  --color-paper: var(--paper);
-  --color-brown: var(--brown);
+  --color-gold-bright: var(--gold-bright);
+  --color-ivory: var(--ivory);
+  --color-maroon: var(--maroon);
+  --color-maroon-deep: var(--maroon-deep);
   --color-muted: var(--muted);
-  --font-sans: var(--font-outfit);
-  --font-display: var(--font-cormorant);
+  --font-sans: var(--font-jakarta);
+  --font-display: var(--font-syne);
+  --font-hindi: var(--font-devanagari);
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
-  background: var(--cream);
-  color: var(--ink);
-  font-family: var(--font-outfit), sans-serif;
+  background: #0b0b0b;
+  color: #f6efe0;
+  font-family: var(--font-jakarta), system-ui, sans-serif;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img,
+svg,
+video,
+iframe {
+  max-width: 100%;
+}
+
+.hide-scroll {
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.hide-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 ::selection {
-  background: var(--copper);
-  color: var(--cream);
+  background: var(--gold);
+  color: var(--void);
 }
 
 .font-display {
-  font-family: var(--font-cormorant), serif;
+  font-family: var(--font-syne), sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.03em;
 }
 
-.rule {
+.font-hindi {
+  font-family: "Noto Serif Devanagari", "Nirmala UI", "Mangal", serif;
+}
+
+.gold-line {
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
-.kenburns {
-  animation: kenburns 28s ease-out forwards;
+.gold-frame {
+  box-shadow: 0 0 0 1px var(--gold);
 }
 
-@keyframes kenburns {
-  from {
-    transform: scale(1.08);
-  }
-  to {
-    transform: scale(1);
+@media (min-width: 640px) {
+  .gold-frame {
+    box-shadow:
+      0 0 0 1px var(--gold),
+      0 0 0 8px var(--void),
+      0 0 0 9px rgba(212, 175, 55, 0.55);
   }
 }
 
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(28px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
@@ -77,27 +98,15 @@ body {
 }
 
 .fade-up {
-  animation: fade-up 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: fade-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .delay-1 {
-  animation-delay: 0.12s;
+  animation-delay: 0.1s;
 }
 .delay-2 {
-  animation-delay: 0.24s;
+  animation-delay: 0.2s;
 }
 .delay-3 {
-  animation-delay: 0.36s;
-}
-.delay-4 {
-  animation-delay: 0.48s;
-}
-
-.grain {
-  pointer-events: none;
-  position: absolute;
-  inset: 0;
-  opacity: 0.18;
-  mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation-delay: 0.3s;
 }

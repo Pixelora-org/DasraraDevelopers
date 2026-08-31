@@ -42,3 +42,5 @@ next-env.d.ts
 
 # brochure raster scratch
 /tmp-brochure
+
+.vercel

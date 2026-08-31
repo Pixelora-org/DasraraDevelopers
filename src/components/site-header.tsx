@@ -10,10 +10,9 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
-  const darkHero = pathname.startsWith("/projects/");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 16);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -23,73 +22,89 @@ export function SiteHeader() {
     setOpen(false);
   }, [pathname]);
 
-  const solid = scrolled || open || !darkHero;
-  const text = solid ? "text-ink" : "text-cream";
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-        solid ? "bg-cream/92 shadow-[0_1px_0_rgba(20,17,14,0.08)] backdrop-blur-md" : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
+        scrolled || open
+          ? "border-gold/40 bg-void/95 backdrop-blur-md"
+          : pathname === "/"
+            ? "border-transparent bg-transparent"
+            : "border-gold/20 bg-void/70"
       }`}
     >
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 sm:px-8">
-        <Link href="/" className={`flex items-center gap-2.5 ${text}`}>
-          <Mark className={`h-8 w-8 ${solid ? "text-copper" : "text-gold"}`} />
+      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-[4.25rem] sm:px-8">
+        <Link href="/" className="flex min-w-0 items-center gap-2 text-gold">
+          <Mark className="h-7 w-7 shrink-0 sm:h-8 sm:w-8" />
           <span className="leading-none">
-            <span className="block font-display text-[1.35rem] tracking-[0.18em]">DASARA</span>
-            <span className="block text-[0.62rem] tracking-[0.32em] uppercase opacity-70">Developers</span>
+            <span className="block font-display text-[1.05rem] tracking-[0.12em] text-ivory sm:text-[1.15rem] sm:tracking-[0.22em]">
+              DASARA
+            </span>
+            <span className="block text-[0.52rem] tracking-[0.22em] uppercase text-gold sm:text-[0.58rem] sm:tracking-[0.38em]">
+              Developers
+            </span>
           </span>
         </Link>
 
-        <nav className={`hidden items-center gap-8 text-[0.72rem] tracking-[0.22em] uppercase md:flex ${text}`}>
+        <nav className="hidden items-center gap-7 text-[0.68rem] tracking-[0.24em] uppercase text-ivory/70 md:flex">
           {site.nav.map((item) => {
-            const active = pathname === item.href;
+            const path = item.href.split("#")[0] || "/";
+            const active = item.href.includes("#") ? false : pathname === path;
             return (
               <Link
                 key={item.href}
                 href={item.href}
-                className={`relative py-1 transition-opacity hover:opacity-100 ${active ? "opacity-100" : "opacity-70"}`}
+                className={`relative py-1 hover:text-gold ${
+                  item.href === pathname || (item.href === "/" && pathname === "/") ? "text-gold" : ""
+                }`}
               >
                 {item.label}
-                {active ? <span className="absolute inset-x-1 -bottom-1 h-px bg-copper" /> : null}
+                {active ? <span className="absolute inset-x-0 -bottom-1 h-px bg-gold" /> : null}
               </Link>
             );
           })}
         </nav>
 
-        <div className="hidden items-center gap-4 md:flex">
-          <Link
-            href="/contact"
-            className={`text-[0.72rem] tracking-[0.18em] uppercase transition-colors ${
-              solid
-                ? "bg-forest px-5 py-2.5 text-cream hover:bg-forest-deep"
-                : "border border-cream/40 px-5 py-2.5 text-cream hover:bg-cream hover:text-ink"
-            }`}
-          >
-            Site visit
-          </Link>
-        </div>
+        <Link
+          href="/contact"
+          className="hidden bg-gold px-5 py-2.5 text-[0.68rem] tracking-[0.2em] uppercase text-void hover:bg-gold-bright md:inline-block"
+        >
+          Site visit
+        </Link>
 
         <button
           type="button"
-          className={`md:hidden ${text}`}
-          aria-label="Menu"
+          className="flex h-11 w-11 items-center justify-center text-gold md:hidden"
+          aria-label={open ? "Close menu" : "Open menu"}
+          aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
-          <span className="block h-px w-7 bg-current" />
-          <span className="mt-2 block h-px w-5 bg-current" />
+          {open ? (
+            <span className="text-2xl leading-none">×</span>
+          ) : (
+            <span className="flex flex-col items-end gap-1.5">
+              <span className="block h-px w-6 bg-current" />
+              <span className="block h-px w-4 bg-current" />
+            </span>
+          )}
         </button>
       </div>
 
       {open ? (
-        <div className="border-t border-ink/10 bg-cream px-5 py-6 md:hidden">
-          <nav className="flex flex-col gap-4 font-display text-3xl text-ink">
+        <div className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-gold/30 bg-void px-5 py-8 md:hidden">
+          <nav className="flex flex-col gap-5 font-display text-3xl text-ivory">
             {site.nav.map((item) => (
               <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
                 {item.label}
               </Link>
             ))}
-            <Link href="/contact" className="mt-2 text-lg tracking-[0.16em] uppercase text-copper">
+            <Link href="/contact" className="mt-2 text-lg tracking-[0.16em] uppercase text-gold" onClick={() => setOpen(false)}>
               Book a site visit
             </Link>
           </nav>

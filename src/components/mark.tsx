@@ -1,14 +1,12 @@
 export function Mark({ className = "h-8 w-8" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 48 48" className={className} aria-hidden>
+    <svg viewBox="0 0 64 64" className={className} aria-hidden>
+      <circle cx="32" cy="32" r="30" fill="none" stroke="currentColor" strokeWidth="1.5" />
       <path
         fill="currentColor"
-        d="M24 3c1.4 6.2 5.2 10.4 11.2 13C29.2 18.6 25.4 22.8 24 29 22.6 22.8 18.8 18.6 12.8 16 18.8 13.4 22.6 9.2 24 3Z"
+        d="M32 10c2.2 8.4 8.2 14.2 16.8 17.2C40.2 30.4 34.2 36.2 32 44.6 29.8 36.2 23.8 30.4 15.2 27.2 23.8 24.2 29.8 18.4 32 10Z"
       />
-      <path
-        fill="currentColor"
-        d="M24 19c.9 4.1 3.4 6.8 7.4 8.5-4 1.7-6.5 4.4-7.4 8.5-.9-4.1-3.4-6.8-7.4-8.5 4-1.7 6.5-4.4 7.4-8.5Z"
-      />
+      <circle cx="32" cy="32" r="4" fill="currentColor" />
     </svg>
   );
 }

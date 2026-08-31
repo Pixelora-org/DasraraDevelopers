@@ -30,10 +30,11 @@ export const site = {
     { role: "Strategic partner", name: "Pristine Property Solutions", place: "Bangalore" },
   ],
   nav: [
-    { href: "/", label: "Home" },
-    { href: "/projects/utsav", label: "Utsav" },
+    { href: "/", label: "Utsav" },
+    { href: "/#villas", label: "Villas" },
+    { href: "/#clubhouse", label: "Clubhouse" },
     { href: "/about", label: "About" },
-    { href: "/contact", label: "Contact" },
+    { href: "/contact", label: "Visit" },
   ],
   disclaimer:
     "Images, renders, floor plans, specifications, and amenities in this website are indicative and for general guidance only. They do not constitute a legal offer. Final terms are governed by the Agreement for Sale and applicable approvals.",

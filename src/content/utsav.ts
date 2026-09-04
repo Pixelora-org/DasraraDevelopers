@@ -174,18 +174,6 @@ export const utsav = {
     "https://maps.google.com/maps?q=12.905363082885742,77.8931884765625&z=17&hl=en&output=embed",
   projectMaps:
     "https://www.google.com/maps?q=12.905363082885742,77.8931884765625&z=17&hl=en",
-  specifications: [
-    { title: "Structure", text: "RCC framed structure and foundation as per soil investigation and design." },
-    { title: "Walls & finish", text: "AAC / concrete blocks. Exterior-grade plaster with weatherproof paint or texture. Interiors in wall putty with premium emulsion." },
-    { title: "Flooring", text: "Vitrified tiles in living, dining, bedrooms, and common areas." },
-    { title: "Toilets", text: "Anti-skid flooring, glazed wall tiles, and branded sanitary fittings." },
-    { title: "Kitchen", text: "Granite / quartz countertop with backsplash tiles and modular kitchen provision." },
-    { title: "Doors & windows", text: "Premium-finish main door, internal flush doors, UPVC / aluminium windows with glazing." },
-    { title: "Electrical", text: "Concealed copper wiring, modular switches, AC points, TV and data points." },
-    { title: "Plumbing & water", text: "CPVC / UPVC with branded CP fittings. Sump, overhead tank, geyser / solar provision." },
-    { title: "Roads & landscape", text: "Paved / concrete / asphalt roads, LED street lighting, common landscape, avenue plantation." },
-    { title: "Utilities", text: "Rainwater harvesting, sewage treatment as applicable, common-area power backup." },
-  ],
 } as const;
 
 export type Villa = (typeof utsav.villas)[number];

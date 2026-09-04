@@ -36,7 +36,7 @@ export function VillaTypes() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="mx-auto mb-8 flex max-w-6xl items-center gap-3 px-4 sm:gap-5 sm:px-8">
+      <div className="mb-8 flex items-center gap-3 sm:gap-5">
         <button
           type="button"
           aria-label="Previous villa"
@@ -98,18 +98,18 @@ export function VillaTypes() {
           {villas.map((item) => (
             <article
               key={item.slug}
-              className="grid w-full min-w-0 shrink-0 basis-full overflow-hidden lg:grid-cols-12"
+              className="grid w-full min-w-0 shrink-0 basis-full items-center overflow-hidden lg:grid-cols-12"
             >
-              <div className="relative aspect-4/3 overflow-hidden bg-ink lg:col-span-7 lg:aspect-auto lg:h-full lg:min-h-[32rem]">
+              <div className="relative aspect-[4/5] overflow-hidden bg-cream lg:col-span-7 lg:aspect-[10/11]">
                 <Image
                   src={item.image}
                   alt={`${item.name} villa`}
                   fill
-                  className="max-w-none object-cover object-center"
-                  sizes="(min-width: 1024px) 58vw, 100vw"
+                  className="max-w-none object-contain object-center"
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                 />
               </div>
-              <div className="flex flex-col justify-center bg-cream px-6 py-8 sm:px-10 lg:col-span-5 lg:px-12">
+              <div className="flex flex-col justify-center bg-cream px-6 py-8 sm:px-10 lg:col-span-5 lg:px-10">
                 <p className="text-[0.68rem] tracking-[0.2em] uppercase text-gold-deep">Dasara</p>
                 <h3 className="mt-1 font-display text-3xl text-ink sm:text-4xl">{item.name}</h3>
                 <p className="mt-3 text-[0.72rem] tracking-[0.12em] uppercase text-brown">

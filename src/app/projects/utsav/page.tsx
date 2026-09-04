@@ -40,13 +40,13 @@ export default function UtsavPage() {
         </div>
       </section>
 
-      <section id="villas" className="scroll-mt-20 overflow-x-hidden bg-cream py-14">
-        <div className="mx-auto max-w-6xl px-4 sm:px-8">
+      <section id="villas" className="scroll-mt-20 bg-cream px-4 py-14 sm:px-8">
+        <div className="mx-auto max-w-6xl">
           <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">Villa types</p>
           <h2 className="mt-2 font-display text-3xl text-ink sm:text-4xl">Six 4BHK triplex homes</h2>
-        </div>
-        <div className="mt-10">
-          <VillaTypes />
+          <div className="mt-10">
+            <VillaTypes />
+          </div>
         </div>
       </section>
 
@@ -102,22 +102,7 @@ export default function UtsavPage() {
         </div>
       </section>
 
-      <section className="bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-8">
-          <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">Specifications</p>
-          <h2 className="mt-2 font-display text-3xl text-ink sm:text-4xl">Built as named</h2>
-          <dl className="mt-10 grid gap-8 sm:grid-cols-2">
-            {utsav.specifications.map((item) => (
-              <div key={item.title} className="border-t border-gold/50 pt-4">
-                <dt className="font-display text-xl text-ink">{item.title}</dt>
-                <dd className="mt-2 text-sm leading-6 text-brown">{item.text}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
-
-      <section className="bg-cream px-4 py-14 sm:px-8">
+      <section className="bg-white px-4 py-14 sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2">
           <div>
             <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">Location</p>
@@ -149,7 +134,7 @@ export default function UtsavPage() {
         </div>
       </section>
 
-      <section className="bg-white px-4 py-14 pb-28 sm:px-8 md:pb-16">
+      <section className="bg-cream px-4 py-14 pb-28 sm:px-8 md:pb-16">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2">
           <div>
             <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">Enquire</p>

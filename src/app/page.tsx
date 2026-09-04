@@ -12,13 +12,12 @@ export default function HomePage() {
           alt="Dasara Utsav villa community"
           fill
           priority
-              className="object-cover object-center"
+          className="object-cover object-center"
           sizes="100vw"
         />
         <div className="absolute inset-x-0 bottom-0 h-2/5 bg-linear-to-t from-ink/55 to-transparent" />
         <div className="relative z-10 mx-auto flex h-full min-h-svh max-w-6xl flex-col justify-end px-4 pb-16 pt-24 sm:px-8 sm:pb-20">
-          <p className="text-[0.7rem] tracking-[0.22em] uppercase text-gold">Dasara Developers</p>
-          <h1 className="mt-3 max-w-3xl font-display text-4xl leading-tight text-white sm:text-6xl">
+          <h1 className="max-w-3xl font-display text-4xl leading-tight text-white sm:text-6xl">
             Creating considered homes in East Bengaluru.
           </h1>
           <p className="mt-4 max-w-xl text-sm leading-7 text-white/85 sm:text-base">
@@ -92,6 +91,24 @@ export default function HomePage() {
           </p>
           <Link href="/about" className="mt-6 inline-block text-[0.72rem] tracking-[0.16em] uppercase text-gold-deep">
             Our story →
+          </Link>
+        </div>
+      </section>
+
+      <section className="bg-cream">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-16 pb-28 sm:px-8 md:flex-row md:items-end md:pb-16">
+          <div>
+            <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">Visit the land</p>
+            <h2 className="mt-3 font-display text-3xl text-ink sm:text-4xl">Request a site visit</h2>
+            <p className="mt-3 max-w-lg text-sm leading-7 text-muted">
+              Walk Dasara Utsav at Chikkatirupathi. Leave your details and we will call you back.
+            </p>
+          </div>
+          <Link
+            href="/contact"
+            className="bg-gold px-6 py-3.5 text-center text-[0.72rem] tracking-[0.16em] uppercase text-white hover:bg-gold-deep"
+          >
+            Enquire
           </Link>
         </div>
       </section>

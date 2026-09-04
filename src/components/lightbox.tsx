@@ -24,14 +24,28 @@ export function Lightbox({
   }, [onClose]);
 
   return (
-    <button
-      type="button"
-      className="fixed inset-0 z-[80] flex items-center justify-center bg-ink/90 p-3 sm:p-4"
+    <div
+      className="fixed inset-0 z-[80] flex items-center justify-center bg-ink/90 p-3 sm:p-8"
       onClick={onClose}
-      aria-label="Close plan"
+      role="dialog"
+      aria-modal="true"
+      aria-label={alt}
     >
+      <button
+        type="button"
+        onClick={onClose}
+        className="absolute right-4 top-4 z-10 flex h-11 w-11 items-center justify-center text-2xl text-white hover:text-gold"
+        aria-label="Close"
+      >
+        ×
+      </button>
       {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={src} alt={alt} className="max-h-[80dvh] w-full max-w-full object-contain" />
-    </button>
+      <img
+        src={src}
+        alt={alt}
+        className="max-h-[82dvh] w-full max-w-5xl object-contain"
+        onClick={(event) => event.stopPropagation()}
+      />
+    </div>
   );
 }

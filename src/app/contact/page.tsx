@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <section className="bg-cream pb-16 pt-10 sm:pb-20 sm:pt-14">
+    <section className="bg-cream pb-16 pt-12 sm:pb-20 sm:pt-16">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 sm:px-8 lg:grid-cols-12 lg:gap-14">
         <div className="lg:col-span-5">
           <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">Contact</p>
@@ -48,7 +48,7 @@ export default function ContactPage() {
                     {line}
                   </span>
                 ))}
-                <a href={site.address.maps} target="_blank" rel="noreferrer" className="mt-2 inline-block text-gold-deep">
+                <a href={site.address.maps} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-gold-deep">
                   Open in Maps →
                 </a>
               </dd>

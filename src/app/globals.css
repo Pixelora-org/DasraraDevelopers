@@ -53,6 +53,11 @@ iframe {
   max-width: 100%;
 }
 
+/* next/image fill must ignore the global max-width or the photo cannot cover its box */
+img[data-nimg="fill"] {
+  max-width: none;
+}
+
 .hide-scroll {
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none;

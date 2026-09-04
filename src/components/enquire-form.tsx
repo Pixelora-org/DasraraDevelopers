@@ -51,9 +51,9 @@ export function EnquireForm() {
 
   return (
     <form onSubmit={onSubmit} className="grid gap-4 sm:grid-cols-2">
-      <Field label="Full name" name="name" required />
-      <Field label="Phone" name="phone" type="tel" required />
-      <Field label="Email" name="email" type="email" />
+      <Field label="Full name" name="name" autoComplete="name" required />
+      <Field label="Phone" name="phone" type="tel" autoComplete="tel" required />
+      <Field label="Email" name="email" type="email" autoComplete="email" />
       <label className="block text-[0.68rem] tracking-[0.16em] uppercase text-gold-deep">
         Villa type
         <select
@@ -81,7 +81,7 @@ export function EnquireForm() {
           disabled={pending}
           className="w-full bg-gold px-6 py-3.5 text-[0.72rem] tracking-[0.18em] uppercase text-white hover:bg-gold-deep disabled:opacity-60"
         >
-          {pending ? "Sending…" : "Request a site visit"}
+          {pending ? "Sending..." : "Request a site visit"}
         </button>
       </div>
     </form>
@@ -93,11 +93,13 @@ function Field({
   name,
   type = "text",
   required,
+  autoComplete,
 }: {
   label: string;
   name: string;
   type?: string;
   required?: boolean;
+  autoComplete?: string;
 }) {
   return (
     <label className="block text-[0.68rem] tracking-[0.16em] uppercase text-gold-deep">
@@ -106,6 +108,7 @@ function Field({
         name={name}
         type={type}
         required={required}
+        autoComplete={autoComplete}
         className="mt-2 w-full border border-line bg-white px-4 py-3 text-base text-ink outline-none focus:border-gold"
       />
     </label>

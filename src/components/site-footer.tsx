@@ -51,6 +51,14 @@ export function SiteFooter() {
                 {line}
               </span>
             ))}
+            <a
+              href={site.address.maps}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-2 inline-block text-gold-deep hover:text-ink"
+            >
+              Open in Maps →
+            </a>
           </address>
           <div className="mt-4 space-y-1 text-sm">
             {site.phones.map((p) => (

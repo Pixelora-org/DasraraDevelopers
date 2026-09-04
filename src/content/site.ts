@@ -11,6 +11,7 @@ export const site = {
   emails: ["info.utsav@dasaradevelopers.com"],
   website: "https://www.dasaradevelopers.com",
   logo: "/brand/logo.png",
+  logoOnDark: "/brand/logo-white.png",
   phones: [
     { label: "+91 96069 50403", href: "tel:+919606950403" },
     { label: "+91 97380 54074", href: "tel:+919738054074" },

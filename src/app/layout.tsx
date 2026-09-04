@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { MobileCta } from "@/components/mobile-cta";
+import { BackToTop } from "@/components/back-to-top";
 import { site } from "@/content/site";
 import { utsav } from "@/content/utsav";
 import "./globals.css";
@@ -26,12 +27,21 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.website),
   title: {
     default: "Dasara Developers | Dasara Utsav",
     template: "%s | Dasara Developers",
   },
   description:
     "Dasara Developers. Premium 4BHK gated villas at Dasara Utsav, Chikkatirupathi, between Whitefield and Sarjapur.",
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    siteName: "Dasara Developers",
+    title: "Dasara Developers | Dasara Utsav",
+    description:
+      "Premium 4BHK gated villas at Dasara Utsav, Chikkatirupathi, between Whitefield and Sarjapur.",
+  },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -46,6 +56,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <main className="flex-1">{children}</main>
         <SiteFooter />
         <MobileCta />
+        <BackToTop />
         <p className="sr-only">
           RERA {utsav.rera}. {site.disclaimer}
         </p>

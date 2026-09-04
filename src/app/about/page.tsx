@@ -41,10 +41,10 @@ export default function AboutPage() {
           </div>
           <div className="relative aspect-4/5 overflow-hidden lg:col-span-6">
             <Image
-              src="/images/lifestyle-wide.png"
-              alt="Dasara Utsav living"
+              src="/images/pool-clean.png"
+              alt="Dasara Utsav clubhouse pool"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               sizes="(min-width: 1024px) 45vw, 100vw"
             />
           </div>

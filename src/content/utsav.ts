@@ -10,7 +10,7 @@ export const utsav = {
   rera: "PRM/KA/RERA/1265/347/PR/230726/008836",
   brochure: "/brochure/dasara-utsav.pdf",
   intro:
-    "An exclusive villa community nestled in the serene landscapes of Chikkatirupathi, one of East Bengaluru’s fastest-emerging residential destinations. Thoughtfully placed with access to Whitefield, Sarjapur, Varthur, and the upcoming Satellite Town Ring Road.",
+    "An exclusive villa community nestled in the serene landscapes of Chikkatirupathi, one of East Bengaluru's fastest-emerging residential destinations. Thoughtfully placed with access to Whitefield, Sarjapur, Varthur, and the upcoming Satellite Town Ring Road.",
   promise: "Luxury beyond expectations. Living beyond limits.",
   facts: [
     { value: "6.08", label: "Acres" },
@@ -33,7 +33,7 @@ export const utsav = {
       plotSqft: "1,500",
       builtUp: "3,350",
       carpet: "1,770",
-      image: "/images/villa-vaibhava.png",
+      image: "/images/villa-vaibhava.png?v=3",
       plan: "/images/plan-vaibhava.png",
     },
     {
@@ -44,7 +44,7 @@ export const utsav = {
       plotSqft: "1,750",
       builtUp: "3,870",
       carpet: "2,085",
-      image: "/images/villa-samruddhi.png",
+      image: "/images/villa-samruddhi.png?v=3",
       plan: "/images/plan-samruddhi.png",
     },
     {
@@ -55,7 +55,7 @@ export const utsav = {
       plotSqft: "1,200",
       builtUp: "2,895",
       carpet: "1,550",
-      image: "/images/villa-sambhrama.png",
+      image: "/images/villa-sambhrama.png?v=3",
       plan: "/images/plan-sambhrama.png",
     },
     {
@@ -66,7 +66,7 @@ export const utsav = {
       plotSqft: "1,400",
       builtUp: "3,228",
       carpet: "1,755",
-      image: "/images/villa-harsha.png",
+      image: "/images/villa-harsha.png?v=3",
       plan: "/images/plan-harsha.png",
     },
     {
@@ -77,7 +77,7 @@ export const utsav = {
       plotSqft: "1,750",
       builtUp: "3,870",
       carpet: "2,085",
-      image: "/images/villa-mangala.png",
+      image: "/images/villa-mangala.png?v=3",
       plan: "/images/plan-mangala.png",
     },
     {
@@ -88,7 +88,7 @@ export const utsav = {
       plotSqft: "1,500",
       builtUp: "3,350",
       carpet: "1,770",
-      image: "/images/villa-vijaya.png",
+      image: "/images/villa-vijaya.png?v=3",
       plan: "/images/plan-vijaya.png",
     },
   ],
@@ -104,14 +104,46 @@ export const utsav = {
     "Vastu compliant",
   ],
   amenities: [
-    { title: "Clubhouse", text: "6,620 sq.ft across levels for fitness, indoor games, lounge, and guest rooms." },
-    { title: "Swimming pool", text: "Main pool with a toddler pool, filtration, and outdoor deck." },
-    { title: "Multipurpose hall", text: "A hall and outdoor function space for celebrations and community evenings." },
-    { title: "Gym & meditation", text: "Dedicated wellness rooms with change, lockers, and quiet corners." },
-    { title: "Guest rooms", text: "Clubhouse guest bedrooms so visitors stay within the community." },
-    { title: "Parks & party lawn", text: "Park-1, Park-2, and a party lawn set into the master plan." },
-    { title: "30-ft internal roads", text: "Wide paved roads, street lighting, and avenue plantation." },
-    { title: "Gated security", text: "Grand entrance, security cabin, CCTV, and controlled access." },
+    {
+      title: "Clubhouse",
+      text: "6,620 sq.ft across levels for fitness, indoor games, lounge, and guest rooms.",
+      image: "/images/amenities/clubhouse.png",
+    },
+    {
+      title: "Swimming pool",
+      text: "Main pool with a toddler pool, filtration, and outdoor deck.",
+      image: "/images/amenities/pool.png",
+    },
+    {
+      title: "Multipurpose hall",
+      text: "A hall and outdoor function space for celebrations and community evenings.",
+      image: "/images/amenities/hall.png",
+    },
+    {
+      title: "Gym & meditation",
+      text: "Dedicated wellness rooms with change, lockers, and quiet corners.",
+      image: "/images/amenities/gym.png",
+    },
+    {
+      title: "Guest rooms",
+      text: "Clubhouse guest bedrooms so visitors stay within the community.",
+      image: "/images/amenities/guest.png",
+    },
+    {
+      title: "Parks & party lawn",
+      text: "Park-1, Park-2, and a party lawn set into the master plan.",
+      image: "/images/amenities/park.png",
+    },
+    {
+      title: "30-ft internal roads",
+      text: "Wide paved roads, street lighting, and avenue plantation.",
+      image: "/images/amenities/roads.png",
+    },
+    {
+      title: "Gated security",
+      text: "Grand entrance, security cabin, CCTV, and controlled access.",
+      image: "/images/amenities/gate.png",
+    },
   ],
   masterPlan: {
     image: "/images/master-plan.png",

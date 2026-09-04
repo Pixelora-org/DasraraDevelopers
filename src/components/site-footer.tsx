@@ -1,48 +1,51 @@
+"use client";
+
+import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { site } from "@/content/site";
 import { utsav } from "@/content/utsav";
-import { Mark } from "@/components/mark";
 
 export function SiteFooter() {
+  const pathname = usePathname();
+  if (pathname.startsWith("/owner")) return null;
+
   return (
-    <footer className="border-t border-gold/30 bg-void text-ivory">
-      <div className="h-1 bg-gradient-to-r from-maroon via-gold to-maroon" />
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 md:grid-cols-12 md:py-20">
+    <footer className="border-t border-line bg-cream text-ink">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-8 md:grid-cols-12 md:py-16">
         <div className="md:col-span-5">
-          <div className="flex items-center gap-2.5 text-gold">
-            <Mark className="h-8 w-8" />
-            <div>
-              <p className="font-display text-2xl tracking-[0.16em] text-ivory">DASARA</p>
-              <p className="text-[0.62rem] tracking-[0.3em] uppercase text-gold">Developers · Bengaluru</p>
-            </div>
-          </div>
-          <p className="font-hindi mt-6 text-3xl text-gold">उत्सव</p>
-          <p className="mt-3 max-w-sm text-sm leading-7 text-ivory/65">
-            Premium 4BHK gated villas between Whitefield and Sarjapur. Built to be seen. Built to live.
+          <Image src={site.logo} alt="Dasara Developers" width={200} height={52} className="h-12 w-auto" />
+          <p className="mt-4 max-w-sm text-sm leading-7 text-muted">
+            Premium 4BHK gated villas between Whitefield and Sarjapur. Founded {site.founded}.
           </p>
         </div>
-
         <div className="md:col-span-3">
-          <p className="text-[0.68rem] tracking-[0.22em] uppercase text-gold">Visit</p>
-          <ul className="mt-4 space-y-2 text-sm text-ivory/70">
+          <p className="text-[0.68rem] tracking-[0.2em] uppercase text-gold-deep">Visit</p>
+          <ul className="mt-4 space-y-2 text-sm text-brown">
             {site.nav.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="hover:text-gold">
+                <Link href={item.href} className="hover:text-gold-deep">
                   {item.label}
                 </Link>
               </li>
             ))}
+            {site.projects.map((project) => (
+              <li key={project.href}>
+                <Link href={project.href} className="hover:text-gold-deep">
+                  {project.name}
+                </Link>
+              </li>
+            ))}
             <li>
-              <a href={utsav.brochure} download className="hover:text-gold">
-                Download brochure
-              </a>
+              <Link href="/contact" className="hover:text-gold-deep">
+                Contact
+              </Link>
             </li>
           </ul>
         </div>
-
         <div className="md:col-span-4">
-          <p className="text-[0.68rem] tracking-[0.22em] uppercase text-gold">Office</p>
-          <address className="mt-4 not-italic text-sm leading-7 text-ivory/70">
+          <p className="text-[0.68rem] tracking-[0.2em] uppercase text-gold-deep">Address</p>
+          <address className="mt-4 not-italic text-sm leading-7 text-brown">
             {site.address.lines.map((line) => (
               <span key={line} className="block">
                 {line}
@@ -51,20 +54,21 @@ export function SiteFooter() {
           </address>
           <div className="mt-4 space-y-1 text-sm">
             {site.phones.map((p) => (
-              <a key={p.href} href={p.href} className="block text-gold hover:text-gold-bright">
+              <a key={p.href} href={p.href} className="block text-ink hover:text-gold-deep">
                 {p.label}
               </a>
             ))}
-            <a href={`mailto:${site.email}`} className="block break-all text-ivory/70 hover:text-gold">
-              {site.email}
-            </a>
+            {site.emails.map((email) => (
+              <a key={email} href={`mailto:${email}`} className="block break-all text-brown hover:text-gold-deep">
+                {email}
+              </a>
+            ))}
           </div>
-          <p className="mt-5 break-all text-[0.7rem] tracking-wide text-muted">RERA {utsav.rera}</p>
+          <p className="mt-5 break-all text-[0.7rem] text-muted">RERA {utsav.rera}</p>
         </div>
       </div>
-
-      <div className="border-t border-gold/20 px-5 py-6 pb-24 sm:px-8 md:pb-6">
-        <div className="mx-auto flex max-w-7xl flex-col gap-3 text-[0.7rem] leading-5 text-ivory/35 md:flex-row md:justify-between">
+      <div className="border-t border-line px-4 py-6 pb-24 sm:px-8 md:pb-6">
+        <div className="mx-auto flex max-w-6xl flex-col gap-3 text-[0.7rem] leading-5 text-muted md:flex-row md:justify-between">
           <p>© {new Date().getFullYear()} Dasara Developers. All rights reserved.</p>
           <p className="max-w-2xl md:text-right">{site.disclaimer}</p>
         </div>

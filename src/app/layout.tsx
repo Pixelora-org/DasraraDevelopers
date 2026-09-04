@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Plus_Jakarta_Sans, Syne } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { MobileCta } from "@/components/mobile-cta";
@@ -7,16 +7,15 @@ import { site } from "@/content/site";
 import { utsav } from "@/content/utsav";
 import "./globals.css";
 
-const jakarta = Plus_Jakarta_Sans({
-  variable: "--font-jakarta",
+const inter = Inter({
+  variable: "--font-inter",
   subsets: ["latin"],
   display: "swap",
 });
 
-const syne = Syne({
-  variable: "--font-syne",
+const playfair = Playfair_Display({
+  variable: "--font-playfair",
   subsets: ["latin"],
-  weight: ["700", "800"],
   display: "swap",
 });
 
@@ -28,11 +27,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   title: {
-    default: "Dasara Utsav — 4BHK Villas | Dasara Developers",
-    template: "%s — Dasara Developers",
+    default: "Dasara Developers | Dasara Utsav",
+    template: "%s | Dasara Developers",
   },
   description:
-    "Dasara Utsav is a 6.08-acre gated villa community in Chikkatirupathi, between Whitefield and Sarjapur. Premium 4BHK triplex villas by Dasara Developers, Bengaluru.",
+    "Dasara Developers. Premium 4BHK gated villas at Dasara Utsav, Chikkatirupathi, between Whitefield and Sarjapur.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
@@ -40,9 +39,9 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`${jakarta.variable} ${syne.variable} h-full`}
+      className={`${inter.variable} ${playfair.variable} h-full`}
     >
-      <body className="min-h-full overflow-x-hidden bg-void font-sans text-ivory antialiased">
+      <body className="min-h-full overflow-x-hidden bg-white font-sans text-ink antialiased">
         <SiteHeader />
         <main className="flex-1">{children}</main>
         <SiteFooter />

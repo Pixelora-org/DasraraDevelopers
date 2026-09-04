@@ -1,28 +1,27 @@
 @import "tailwindcss";
 
 :root {
-  --void: #0b0b0b;
-  --panel: #13100c;
-  --gold: #d4af37;
-  --gold-bright: #f0d78c;
-  --ivory: #f6efe0;
-  --maroon: #7a1f2b;
-  --maroon-deep: #4c1018;
-  --muted: #a8946c;
+  --white: #ffffff;
+  --cream: #f7f3ec;
+  --gold: #c4a35a;
+  --gold-deep: #9a7b32;
+  --brown: #5c4033;
+  --ink: #2a1f18;
+  --muted: #7a6a5c;
+  --line: #e6ddd0;
 }
 
 @theme inline {
-  --color-void: var(--void);
-  --color-panel: var(--panel);
+  --color-white: var(--white);
+  --color-cream: var(--cream);
   --color-gold: var(--gold);
-  --color-gold-bright: var(--gold-bright);
-  --color-ivory: var(--ivory);
-  --color-maroon: var(--maroon);
-  --color-maroon-deep: var(--maroon-deep);
+  --color-gold-deep: var(--gold-deep);
+  --color-brown: var(--brown);
+  --color-ink: var(--ink);
   --color-muted: var(--muted);
-  --font-sans: var(--font-jakarta);
-  --font-display: var(--font-syne);
-  --font-hindi: var(--font-devanagari);
+  --color-line: var(--line);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-playfair);
 }
 
 html {
@@ -31,11 +30,20 @@ html {
 }
 
 body {
-  background: #0b0b0b;
-  color: #f6efe0;
-  font-family: var(--font-jakarta), system-ui, sans-serif;
+  background: var(--white);
+  color: var(--ink);
+  font-family: var(--font-inter), system-ui, sans-serif;
   overflow-x: hidden;
   max-width: 100%;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--white);
+}
+
+.font-display {
+  font-family: var(--font-playfair), "Times New Roman", serif;
 }
 
 img,
@@ -51,62 +59,4 @@ iframe {
 }
 .hide-scroll::-webkit-scrollbar {
   display: none;
-}
-
-::selection {
-  background: var(--gold);
-  color: var(--void);
-}
-
-.font-display {
-  font-family: var(--font-syne), sans-serif;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-}
-
-.font-hindi {
-  font-family: "Noto Serif Devanagari", "Nirmala UI", "Mangal", serif;
-}
-
-.gold-line {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
-}
-
-.gold-frame {
-  box-shadow: 0 0 0 1px var(--gold);
-}
-
-@media (min-width: 640px) {
-  .gold-frame {
-    box-shadow:
-      0 0 0 1px var(--gold),
-      0 0 0 8px var(--void),
-      0 0 0 9px rgba(212, 175, 55, 0.55);
-  }
-}
-
-@keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-.fade-up {
-  animation: fade-up 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-
-.delay-1 {
-  animation-delay: 0.1s;
-}
-.delay-2 {
-  animation-delay: 0.2s;
-}
-.delay-3 {
-  animation-delay: 0.3s;
 }

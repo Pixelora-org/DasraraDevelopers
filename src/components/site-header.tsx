@@ -1,25 +1,24 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { site } from "@/content/site";
-import { Mark } from "@/components/mark";
 
 export function SiteHeader() {
   const pathname = usePathname();
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [projectsOpen, setProjectsOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 16);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  const isHome = pathname === "/";
+  const overHero = isHome && !scrolled && !open;
+  const projectsActive = pathname.startsWith("/projects");
 
   useEffect(() => {
     setOpen(false);
+    setProjectsOpen(false);
   }, [pathname]);
 
   useEffect(() => {
@@ -29,83 +28,140 @@ export function SiteHeader() {
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!isHome) {
+      setScrolled(false);
+      return;
+    }
+    const onScroll = () => setScrolled(window.scrollY > 24);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isHome]);
+
+  if (pathname.startsWith("/owner")) return null;
+
+  const linkTone = overHero ? "text-white hover:text-gold" : "text-brown hover:text-gold-deep";
+  const activeTone = overHero ? "text-gold" : "text-gold-deep";
+
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 border-b transition-colors duration-300 ${
-        scrolled || open
-          ? "border-gold/40 bg-void/95 backdrop-blur-md"
-          : pathname === "/"
-            ? "border-transparent bg-transparent"
-            : "border-gold/20 bg-void/70"
+      className={`top-0 z-50 ${isHome ? "fixed inset-x-0" : "sticky"} ${
+        overHero ? "border-b border-transparent bg-transparent" : "border-b border-line bg-white/95 backdrop-blur-md"
       }`}
     >
-      <div className="mx-auto flex h-16 max-w-7xl items-center justify-between gap-3 px-4 sm:h-[4.25rem] sm:px-8">
-        <Link href="/" className="flex min-w-0 items-center gap-2 text-gold">
-          <Mark className="h-7 w-7 shrink-0 sm:h-8 sm:w-8" />
-          <span className="leading-none">
-            <span className="block font-display text-[1.05rem] tracking-[0.12em] text-ivory sm:text-[1.15rem] sm:tracking-[0.22em]">
-              DASARA
-            </span>
-            <span className="block text-[0.52rem] tracking-[0.22em] uppercase text-gold sm:text-[0.58rem] sm:tracking-[0.38em]">
-              Developers
-            </span>
-          </span>
+      <div className="relative mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:h-20 sm:px-8">
+        <Link href="/" className="relative z-10 shrink-0">
+          <Image
+            src={site.logo}
+            alt="Dasara Developers"
+            width={220}
+            height={56}
+            className="h-10 w-auto sm:h-12"
+            priority
+          />
         </Link>
 
-        <nav className="hidden items-center gap-7 text-[0.68rem] tracking-[0.24em] uppercase text-ivory/70 md:flex">
-          {site.nav.map((item) => {
-            const path = item.href.split("#")[0] || "/";
-            const active = item.href.includes("#") ? false : pathname === path;
-            return (
-              <Link
-                key={item.href}
-                href={item.href}
-                className={`relative py-1 hover:text-gold ${
-                  item.href === pathname || (item.href === "/" && pathname === "/") ? "text-gold" : ""
-                }`}
-              >
-                {item.label}
-                {active ? <span className="absolute inset-x-0 -bottom-1 h-px bg-gold" /> : null}
-              </Link>
-            );
-          })}
+        <nav
+          className={`absolute left-1/2 hidden -translate-x-1/2 items-center gap-8 text-[0.95rem] md:flex ${
+            overHero ? "text-white" : "text-brown"
+          }`}
+        >
+          <Link href="/" className={`${pathname === "/" ? activeTone : linkTone}`}>
+            Home
+          </Link>
+
+          <div
+            className="relative"
+            onMouseEnter={() => setProjectsOpen(true)}
+            onMouseLeave={() => setProjectsOpen(false)}
+          >
+            <button
+              type="button"
+              className={`inline-flex items-center gap-1.5 ${projectsActive || projectsOpen ? activeTone : linkTone}`}
+              aria-expanded={projectsOpen}
+              onClick={() => setProjectsOpen((v) => !v)}
+            >
+              Projects
+              <span className="text-[0.6rem]">{projectsOpen ? "▴" : "▾"}</span>
+            </button>
+            {projectsOpen ? (
+              <div className="absolute left-1/2 top-full z-20 w-64 -translate-x-1/2 pt-3">
+                <div className="border border-line bg-white px-5 py-4 text-left shadow-sm">
+                  {site.projects.map((project) => (
+                    <Link
+                      key={project.href}
+                      href={project.href}
+                      className="block"
+                      onClick={() => setProjectsOpen(false)}
+                    >
+                      <span className="block font-display text-base tracking-normal text-ink normal-case">
+                        {project.name}
+                      </span>
+                      <span className="mt-1 block text-[0.62rem] tracking-[0.14em] text-muted">
+                        {project.place}
+                      </span>
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ) : null}
+          </div>
+
+          <Link href="/about" className={`${pathname === "/about" ? activeTone : linkTone}`}>
+            About
+          </Link>
         </nav>
 
-        <Link
-          href="/contact"
-          className="hidden bg-gold px-5 py-2.5 text-[0.68rem] tracking-[0.2em] uppercase text-void hover:bg-gold-bright md:inline-block"
-        >
-          Site visit
-        </Link>
-
-        <button
-          type="button"
-          className="flex h-11 w-11 items-center justify-center text-gold md:hidden"
-          aria-label={open ? "Close menu" : "Open menu"}
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? (
-            <span className="text-2xl leading-none">×</span>
-          ) : (
-            <span className="flex flex-col items-end gap-1.5">
-              <span className="block h-px w-6 bg-current" />
-              <span className="block h-px w-4 bg-current" />
-            </span>
-          )}
-        </button>
+        <div className="relative z-10 flex items-center gap-2">
+          <Link
+            href="/contact"
+            className="hidden bg-gold px-5 py-2.5 text-[0.68rem] tracking-[0.18em] uppercase text-white hover:bg-gold-deep md:inline-block"
+          >
+            Enquire
+          </Link>
+          <button
+            type="button"
+            className={`flex h-11 w-11 items-center justify-center md:hidden ${overHero ? "text-white" : "text-brown"}`}
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? (
+              <span className="text-2xl leading-none">×</span>
+            ) : (
+              <span className="flex flex-col items-end gap-1.5">
+                <span className="block h-px w-6 bg-current" />
+                <span className="block h-px w-4 bg-current" />
+              </span>
+            )}
+          </button>
+        </div>
       </div>
 
       {open ? (
-        <div className="max-h-[calc(100dvh-4rem)] overflow-y-auto border-t border-gold/30 bg-void px-5 py-8 md:hidden">
-          <nav className="flex flex-col gap-5 font-display text-3xl text-ivory">
-            {site.nav.map((item) => (
-              <Link key={item.href} href={item.href} onClick={() => setOpen(false)}>
-                {item.label}
-              </Link>
-            ))}
-            <Link href="/contact" className="mt-2 text-lg tracking-[0.16em] uppercase text-gold" onClick={() => setOpen(false)}>
-              Book a site visit
+        <div className="border-t border-line bg-white px-5 py-8 md:hidden">
+          <nav className="flex flex-col gap-5 font-display text-2xl text-ink">
+            <Link href="/" onClick={() => setOpen(false)}>
+              Home
+            </Link>
+            <div>
+              <p className="text-[0.68rem] tracking-[0.18em] uppercase text-gold-deep">Projects</p>
+              {site.projects.map((project) => (
+                <Link
+                  key={project.href}
+                  href={project.href}
+                  className="mt-3 block"
+                  onClick={() => setOpen(false)}
+                >
+                  {project.name}
+                </Link>
+              ))}
+            </div>
+            <Link href="/about" onClick={() => setOpen(false)}>
+              About
+            </Link>
+            <Link href="/contact" onClick={() => setOpen(false)}>
+              Enquire
             </Link>
           </nav>
         </div>

@@ -32,6 +32,13 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
+
+# enquiry worksheet
+/data/leads.json
+
+# brochure raster scratch
+/tmp-v4
 
 # vercel
 .vercel

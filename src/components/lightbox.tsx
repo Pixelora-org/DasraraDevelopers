@@ -26,7 +26,7 @@ export function Lightbox({
   return (
     <button
       type="button"
-      className="fixed inset-0 z-[80] flex items-center justify-center bg-void/92 p-3 sm:p-4"
+      className="fixed inset-0 z-[80] flex items-center justify-center bg-ink/90 p-3 sm:p-4"
       onClick={onClose}
       aria-label="Close plan"
     >

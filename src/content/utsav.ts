@@ -10,7 +10,7 @@ export const utsav = {
   rera: "PRM/KA/RERA/1265/347/PR/230726/008836",
   brochure: "/brochure/dasara-utsav.pdf",
   intro:
-    "An exclusive villa community nestled in the serene landscapes of Chikkatirupathi — one of East Bengaluru’s fastest-emerging residential destinations. Thoughtfully placed with access to Whitefield, Sarjapur, Varthur, and the upcoming Satellite Town Ring Road.",
+    "An exclusive villa community nestled in the serene landscapes of Chikkatirupathi, one of East Bengaluru’s fastest-emerging residential destinations. Thoughtfully placed with access to Whitefield, Sarjapur, Varthur, and the upcoming Satellite Town Ring Road.",
   promise: "Luxury beyond expectations. Living beyond limits.",
   facts: [
     { value: "6.08", label: "Acres" },
@@ -93,13 +93,14 @@ export const utsav = {
     },
   ],
   villaFeatures: [
-    "4 bedrooms",
-    "2 car parking",
-    "Lift provision",
+    "Spacious living",
     "Modular kitchen",
-    "Attached toilets",
-    "Utility space",
     "Private balcony",
+    "Attached toilets",
+    "2 car parking",
+    "Utility space",
+    "Lift provision",
+    "4 bedrooms",
     "Vastu compliant",
   ],
   amenities: [
@@ -138,7 +139,9 @@ export const utsav = {
   connectivity:
     "Strategically located off Sarjapur Road, with a path to Whitefield, Varthur, Hope Farm, and the upcoming STRR. A quieter address that still reaches IT parks, schools, and healthcare.",
   projectMap:
-    "https://maps.google.com/maps?q=Chikkatirupathi%20Bangalore&t=&z=13&ie=UTF8&iwloc=&output=embed",
+    "https://maps.google.com/maps?q=12.905363082885742,77.8931884765625&z=17&hl=en&output=embed",
+  projectMaps:
+    "https://www.google.com/maps?q=12.905363082885742,77.8931884765625&z=17&hl=en",
   specifications: [
     { title: "Structure", text: "RCC framed structure and foundation as per soil investigation and design." },
     { title: "Walls & finish", text: "AAC / concrete blocks. Exterior-grade plaster with weatherproof paint or texture. Interiors in wall putty with premium emulsion." },

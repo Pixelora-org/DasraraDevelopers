@@ -4,42 +4,38 @@ export const site = {
   tagline: "Lifestyle Community Villas",
   founded: 2010,
   founder: {
-    name: "Surineni Prasad Naidu",
+    name: "Kodanda Reddy",
     role: "Founder",
   },
   motto: "Together we grow",
-  email: "info@dasaradevelopers.com",
+  emails: ["info.utsav@dasaradevelopers.com"],
   website: "https://www.dasaradevelopers.com",
+  logo: "/brand/logo.png",
   phones: [
-    { label: "+91 96069 50403", href: "tel:+919606950403", wa: "919606950403" },
-    { label: "+91 97380 54074", href: "tel:+919738054074", wa: "919738054074" },
+    { label: "+91 96069 50403", href: "tel:+919606950403" },
+    { label: "+91 97380 54074", href: "tel:+919738054074" },
   ],
-  primaryWhatsApp: "919606950403",
   address: {
     lines: [
-      "Door No. 4/1, Devarabisana Halli Main Road",
-      "Devarabisana Halli, Varthur Hobli",
-      "Bengaluru East, Bengaluru 560103",
+      "Sy No 30/1A, 30/3 and 33",
+      "Chikathirupati to Malur Main Road",
+      "Sonnur Village, Lakkur Hobli",
+      "Malur Taluk, Kolar District",
+      "Kolar 563163",
     ],
-    maps: "https://www.google.com/maps/search/?api=1&query=Devarabisana+Halli+Main+Road+Varthur+Hobli+Bengaluru+560103",
+    maps: "https://www.google.com/maps?q=12.905363082885742,77.8931884765625&z=17&hl=en",
     embed:
-      "https://maps.google.com/maps?q=Devarabisana%20Halli%20Main%20Road%20Varthur%20Hobli%20Bengaluru&t=&z=15&ie=UTF8&iwloc=&output=embed",
+      "https://maps.google.com/maps?q=12.905363082885742,77.8931884765625&z=17&hl=en&output=embed",
   },
   partners: [
     { role: "Architect", name: "V Dot Architect", place: "Bangalore" },
     { role: "Strategic partner", name: "Pristine Property Solutions", place: "Bangalore" },
   ],
   nav: [
-    { href: "/", label: "Utsav" },
-    { href: "/#villas", label: "Villas" },
-    { href: "/#clubhouse", label: "Clubhouse" },
+    { href: "/", label: "Home" },
     { href: "/about", label: "About" },
-    { href: "/contact", label: "Visit" },
   ],
+  projects: [{ href: "/projects/utsav", name: "Dasara Utsav", place: "Chikkatirupathi" }],
   disclaimer:
     "Images, renders, floor plans, specifications, and amenities in this website are indicative and for general guidance only. They do not constitute a legal offer. Final terms are governed by the Agreement for Sale and applicable approvals.",
 } as const;
-
-export function whatsappHref(message: string) {
-  return `https://wa.me/${site.primaryWhatsApp}?text=${encodeURIComponent(message)}`;
-}

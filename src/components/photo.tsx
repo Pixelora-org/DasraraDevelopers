@@ -11,7 +11,15 @@ type PhotoProps = Omit<ImageProps, "placeholder" | "blurDataURL"> & {
   fade?: boolean;
 };
 
-export function Photo({ className = "", fade = true, priority, onLoad, alt, ...props }: PhotoProps) {
+export function Photo({
+  className = "",
+  fade = true,
+  priority,
+  onLoad,
+  alt,
+  quality = 75,
+  ...props
+}: PhotoProps) {
   const [ready, setReady] = useState(Boolean(priority));
 
   return (
@@ -19,7 +27,7 @@ export function Photo({ className = "", fade = true, priority, onLoad, alt, ...p
       {...props}
       alt={alt}
       priority={priority}
-      quality={75}
+      quality={quality}
       placeholder="blur"
       blurDataURL={CREAM_BLUR}
       className={`${className} ${

@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { site } from "@/content/site";
-import { utsav } from "@/content/utsav";
 import { EnquireForm } from "@/components/enquire-form";
 
 export const metadata: Metadata = {
@@ -50,14 +49,6 @@ export default function ContactPage() {
                 ))}
                 <a href={site.address.maps} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-gold-deep">
                   Open in Maps →
-                </a>
-              </dd>
-            </div>
-            <div>
-              <dt className="text-[0.68rem] tracking-[0.16em] uppercase text-gold-deep">Brochure</dt>
-              <dd className="mt-2">
-                <a href={utsav.brochure} download className="text-ink hover:text-gold-deep">
-                  Download Dasara Utsav PDF
                 </a>
               </dd>
             </div>

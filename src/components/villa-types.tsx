@@ -13,11 +13,23 @@ export function VillaTypes() {
   const [paused, setPaused] = useState(false);
   const [planOpen, setPlanOpen] = useState(false);
   const startX = useRef(0);
+  const navRef = useRef<HTMLElement>(null);
+  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
   const villa = villas[index];
 
   function go(next: number) {
     setIndex((next + villas.length) % villas.length);
   }
+
+  useEffect(() => {
+    const nav = navRef.current;
+    const tab = tabRefs.current[index];
+    if (!nav || !tab) return;
+    const navBox = nav.getBoundingClientRect();
+    const tabBox = tab.getBoundingClientRect();
+    const offset = tabBox.left - navBox.left - navBox.width / 2 + tabBox.width / 2;
+    nav.scrollTo({ left: nav.scrollLeft + offset, behavior: "smooth" });
+  }, [index]);
 
   useEffect(() => {
     if (paused || planOpen) return;
@@ -45,12 +57,18 @@ export function VillaTypes() {
         >
           ‹
         </button>
-        <nav className="hide-scroll flex min-w-0 flex-1 items-end justify-start gap-6 overflow-x-auto sm:justify-center sm:gap-10">
+        <nav
+          ref={navRef}
+          className="hide-scroll flex min-w-0 flex-1 items-end justify-start gap-6 overflow-x-auto sm:justify-center sm:gap-10"
+        >
           {villas.map((item, i) => {
             const active = i === index;
             return (
               <button
                 key={item.slug}
+                ref={(el) => {
+                  tabRefs.current[i] = el;
+                }}
                 type="button"
                 onClick={() => go(i)}
                 className={`relative shrink-0 pb-2.5 font-display text-base tracking-wide sm:text-lg ${
@@ -110,20 +128,19 @@ export function VillaTypes() {
                 />
               </div>
               <div className="flex flex-col justify-center bg-cream px-6 py-8 sm:px-10 lg:col-span-5 lg:px-10">
-                <p className="text-[0.68rem] tracking-[0.2em] uppercase text-gold-deep">Dasara</p>
+                <p className="text-[0.75rem] tracking-[0.2em] uppercase text-gold-deep">Dasara</p>
                 <h3 className="mt-1 font-display text-3xl text-ink sm:text-4xl">{item.name}</h3>
-                <p className="mt-3 text-[0.72rem] tracking-[0.12em] uppercase text-brown">
+                <p className="mt-3 text-[0.8rem] tracking-[0.12em] uppercase text-ink">
                   {item.facing} ({item.plot})
                 </p>
                 <dl className="mt-6 space-y-3 border-y border-gold/50 py-4 text-sm">
                   <Row label="Total built-up area" value={`${item.builtUp} sq.ft`} />
-                  <Row label="Total carpet area" value={`${item.carpet} sq.ft`} />
                 </dl>
-                <ul className="mt-6 grid grid-cols-3 gap-x-3 gap-y-4">
+                <ul className="mt-6 grid grid-cols-2 gap-x-4 gap-y-4 sm:grid-cols-4">
                   {utsav.villaFeatures.map((feature) => (
                     <li
                       key={feature}
-                      className="text-center text-[0.62rem] leading-4 tracking-[0.06em] uppercase text-brown"
+                      className="text-center text-[0.75rem] leading-5 tracking-[0.08em] uppercase text-ink"
                     >
                       {feature}
                     </li>
@@ -154,7 +171,7 @@ export function VillaTypes() {
 function Row({ label, value }: { label: string; value: string }) {
   return (
     <div className="flex items-baseline justify-between gap-3">
-      <dt className="text-[0.62rem] tracking-[0.14em] uppercase text-gold-deep">{label}</dt>
+      <dt className="text-[0.75rem] tracking-[0.14em] uppercase text-ink">{label}</dt>
       <dd className="text-ink">{value}</dd>
     </div>
   );

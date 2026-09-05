@@ -8,7 +8,6 @@ export const utsav = {
   acres: "6.08",
   clubhouseSqft: "6,620",
   rera: "PRM/KA/RERA/1265/347/PR/230726/008836",
-  brochure: "/brochure/dasara-utsav.pdf",
   intro:
     "An exclusive villa community nestled in the serene landscapes of Chikkatirupathi, one of East Bengaluru's fastest-emerging residential destinations. Thoughtfully placed with access to Whitefield, Sarjapur, Varthur, and the upcoming Satellite Town Ring Road.",
   promise: "Luxury beyond expectations. Living beyond limits.",
@@ -32,8 +31,7 @@ export const utsav = {
       plot: "30 × 50",
       plotSqft: "1,500",
       builtUp: "3,350",
-      carpet: "1,770",
-      image: "/images/villa-vaibhava.png?v=3",
+      image: "/images/villa-vaibhava.png?v=4",
       plan: "/images/plan-vaibhava.png",
     },
     {
@@ -43,8 +41,7 @@ export const utsav = {
       plot: "35 × 50",
       plotSqft: "1,750",
       builtUp: "3,870",
-      carpet: "2,085",
-      image: "/images/villa-samruddhi.png?v=3",
+      image: "/images/villa-samruddhi.png?v=4",
       plan: "/images/plan-samruddhi.png",
     },
     {
@@ -54,8 +51,7 @@ export const utsav = {
       plot: "30 × 40",
       plotSqft: "1,200",
       builtUp: "2,895",
-      carpet: "1,550",
-      image: "/images/villa-sambhrama.png?v=3",
+      image: "/images/villa-sambhrama.png?v=4",
       plan: "/images/plan-sambhrama.png",
     },
     {
@@ -65,8 +61,7 @@ export const utsav = {
       plot: "35 × 40",
       plotSqft: "1,400",
       builtUp: "3,228",
-      carpet: "1,755",
-      image: "/images/villa-harsha.png?v=3",
+      image: "/images/villa-harsha.png?v=4",
       plan: "/images/plan-harsha.png",
     },
     {
@@ -76,8 +71,7 @@ export const utsav = {
       plot: "35 × 50",
       plotSqft: "1,750",
       builtUp: "3,870",
-      carpet: "2,085",
-      image: "/images/villa-mangala.png?v=3",
+      image: "/images/villa-mangala.png?v=4",
       plan: "/images/plan-mangala.png",
     },
     {
@@ -87,14 +81,12 @@ export const utsav = {
       plot: "30 × 50",
       plotSqft: "1,500",
       builtUp: "3,350",
-      carpet: "1,770",
-      image: "/images/villa-vijaya.png?v=3",
+      image: "/images/villa-vijaya.png?v=4",
       plan: "/images/plan-vijaya.png",
     },
   ],
   villaFeatures: [
     "Spacious living",
-    "Modular kitchen",
     "Private balcony",
     "Attached toilets",
     "2 car parking",
@@ -112,7 +104,7 @@ export const utsav = {
     {
       title: "Swimming pool",
       text: "Main pool with a toddler pool, filtration, and outdoor deck.",
-      image: "/images/amenities/pool.png",
+      image: "/images/amenities/pool.png?v=4",
     },
     {
       title: "Multipurpose hall",

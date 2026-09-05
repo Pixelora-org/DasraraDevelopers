@@ -49,5 +49,10 @@ next-env.d.ts
 
 # brochure raster scratch
 /tmp-brochure
+/tmp-new-assets
+
+# source packs kept local, not shipped
+*.zip
+/Dasara Utsav Brochure*.pdf
 
 .vercel

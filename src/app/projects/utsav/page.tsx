@@ -33,7 +33,7 @@ export default function UtsavPage() {
 
       <section className="bg-white">
         <div className="mx-auto max-w-3xl px-4 py-14 text-center sm:px-8">
-          <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">The community</p>
+          <p className="text-[0.75rem] tracking-[0.2em] uppercase text-gold-deep">The community</p>
           <h2 className="mt-3 font-display text-3xl text-ink sm:text-4xl">{utsav.headline}</h2>
           <p className="mt-5 text-sm leading-7 text-brown sm:text-base">{utsav.intro}</p>
           <p className="mt-5 break-all text-xs text-muted">RERA {utsav.rera}</p>
@@ -42,7 +42,7 @@ export default function UtsavPage() {
 
       <section id="villas" className="scroll-mt-20 bg-cream px-4 py-14 sm:px-8">
         <div className="mx-auto max-w-6xl">
-          <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">Villa types</p>
+          <p className="text-[0.75rem] tracking-[0.2em] uppercase text-gold-deep">Villa types</p>
           <h2 className="mt-2 font-display text-3xl text-ink sm:text-4xl">Six 4BHK triplex homes</h2>
           <div className="mt-10">
             <VillaTypes />
@@ -53,7 +53,7 @@ export default function UtsavPage() {
       <section className="bg-white">
         <div className="mx-auto grid max-w-6xl items-center gap-8 px-4 py-14 sm:px-8 lg:grid-cols-2">
           <div>
-            <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">Master plan</p>
+            <p className="text-[0.75rem] tracking-[0.2em] uppercase text-gold-deep">Master plan</p>
             <h2 className="mt-2 font-display text-3xl text-ink">6.08 acres</h2>
             <ul className="mt-6 grid grid-cols-1 gap-2 text-sm text-brown sm:grid-cols-2">
               {utsav.masterPlan.items.map((item) => (
@@ -78,7 +78,7 @@ export default function UtsavPage() {
 
       <section className="bg-cream">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-8">
-          <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">Amenities</p>
+          <p className="text-[0.75rem] tracking-[0.2em] uppercase text-gold-deep">Amenities</p>
           <h2 className="mt-2 font-display text-3xl text-ink sm:text-4xl">Everyday living, on the land</h2>
           <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {utsav.amenities.map((item) => (
@@ -105,7 +105,7 @@ export default function UtsavPage() {
       <section className="bg-white px-4 py-14 sm:px-8">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2">
           <div>
-            <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">Location</p>
+            <p className="text-[0.75rem] tracking-[0.2em] uppercase text-gold-deep">Location</p>
             <h2 className="mt-2 font-display text-3xl text-ink">Off Sarjapur. Close to Whitefield.</h2>
             <p className="mt-4 text-sm leading-7 text-brown">{utsav.connectivity}</p>
             <a
@@ -137,14 +137,11 @@ export default function UtsavPage() {
       <section className="bg-cream px-4 py-14 pb-28 sm:px-8 md:pb-16">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2">
           <div>
-            <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">Enquire</p>
+            <p className="text-[0.75rem] tracking-[0.2em] uppercase text-gold-deep">Enquire</p>
             <h2 className="mt-2 font-display text-3xl text-ink">Request a site visit</h2>
             <p className="mt-4 text-sm leading-7 text-muted">
-              Share your details. We will call you back. Brochure download is available below.
+              Share your details. We will call you back.
             </p>
-            <a href={utsav.brochure} download className="mt-4 inline-block text-sm text-gold-deep">
-              Download brochure PDF →
-            </a>
           </div>
           <div className="border border-line bg-white p-4 sm:p-8">
             <EnquireForm />

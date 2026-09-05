@@ -41,13 +41,42 @@ export default function AboutPage() {
           </div>
           <div className="relative aspect-4/5 overflow-hidden lg:col-span-6">
             <Image
-              src="/images/pool-clean.png"
+              src="/images/pool-clean.png?v=4"
               alt="Dasara Utsav clubhouse pool"
               fill
               className="object-cover object-center"
               sizes="(min-width: 1024px) 45vw, 100vw"
             />
           </div>
+        </div>
+      </section>
+
+      <section className="bg-white">
+        <div className="mx-auto grid max-w-6xl gap-4 px-4 pb-14 sm:grid-cols-2 sm:px-8">
+          <figure className="relative aspect-4/3 overflow-hidden bg-cream">
+            <Image
+              src="/images/community.png"
+              alt="Dasara Utsav villa street"
+              fill
+              className="object-cover"
+              sizes="(min-width: 640px) 50vw, 100vw"
+            />
+            <figcaption className="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/55 to-transparent px-4 py-4 text-[0.72rem] tracking-[0.16em] uppercase text-white">
+              The community
+            </figcaption>
+          </figure>
+          <figure className="relative aspect-4/3 overflow-hidden bg-cream">
+            <Image
+              src="/images/amenities/clubhouse.png"
+              alt="Dasara Utsav clubhouse"
+              fill
+              className="object-cover"
+              sizes="(min-width: 640px) 50vw, 100vw"
+            />
+            <figcaption className="absolute inset-x-0 bottom-0 bg-linear-to-t from-ink/55 to-transparent px-4 py-4 text-[0.72rem] tracking-[0.16em] uppercase text-white">
+              The clubhouse
+            </figcaption>
+          </figure>
         </div>
       </section>
 

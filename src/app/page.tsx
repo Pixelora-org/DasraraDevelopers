@@ -72,10 +72,10 @@ export default function HomePage() {
           </div>
           <div className="relative aspect-5/4 overflow-hidden lg:col-span-7">
             <Photo
-              src="/images/lifestyle.webp"
-              alt="Dasara Utsav"
+              src="/images/presence.webp"
+              alt="Dasara Utsav gated community"
               fill
-              className="object-cover"
+              className="object-cover object-center"
               sizes="(min-width: 1024px) 55vw, 100vw"
             />
           </div>

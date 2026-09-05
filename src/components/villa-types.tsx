@@ -14,8 +14,6 @@ export function VillaTypes() {
   const [planOpen, setPlanOpen] = useState(false);
   const startX = useRef(0);
   const villa = villas[index];
-  const prevVilla = index > 0 ? villas[index - 1] : null;
-  const nextVilla = index < villas.length - 1 ? villas[index + 1] : null;
 
   function go(next: number) {
     setIndex((next + villas.length) % villas.length);
@@ -47,32 +45,23 @@ export function VillaTypes() {
         >
           ‹
         </button>
-        <nav className="flex items-end justify-center gap-6 sm:gap-8">
-          <div className="w-24 text-right sm:w-28">
-            {prevVilla ? (
-              <button
-                type="button"
-                onClick={() => go(index - 1)}
-                className="pb-2.5 font-display text-sm tracking-wide text-muted hover:text-ink sm:text-base"
+        <nav className="w-48 overflow-hidden">
+          <div
+            className="flex"
+            style={{
+              transform: `translateX(-${index * 12}rem)`,
+              transition: "transform 700ms ease-in-out",
+            }}
+          >
+            {villas.map((item) => (
+              <p
+                key={item.slug}
+                className="relative w-48 shrink-0 pb-2.5 text-center font-display text-lg tracking-wide text-ink sm:text-xl"
               >
-                {prevVilla.name}
-              </button>
-            ) : null}
-          </div>
-          <p className="relative w-36 pb-2.5 text-center font-display text-lg tracking-wide text-ink sm:w-40 sm:text-xl">
-            {villa.name}
-            <span className="absolute inset-x-2 bottom-0 h-px bg-gold" />
-          </p>
-          <div className="w-24 text-left sm:w-28">
-            {nextVilla ? (
-              <button
-                type="button"
-                onClick={() => go(index + 1)}
-                className="pb-2.5 font-display text-sm tracking-wide text-muted hover:text-ink sm:text-base"
-              >
-                {nextVilla.name}
-              </button>
-            ) : null}
+                {item.name}
+                <span className="absolute inset-x-6 bottom-0 h-px bg-gold" />
+              </p>
+            ))}
           </div>
         </nav>
         <button

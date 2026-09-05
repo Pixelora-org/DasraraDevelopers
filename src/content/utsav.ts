@@ -134,7 +134,7 @@ export const utsav = {
     {
       title: "Gated security",
       text: "Grand entrance, security cabin, CCTV, and controlled access.",
-      image: "/images/amenities/security.webp",
+      image: "/images/hero-entrance.webp",
     },
   ],
   masterPlan: {

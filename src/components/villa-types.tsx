@@ -7,7 +7,6 @@ import { Photo } from "@/components/photo";
 
 const villas = utsav.villas;
 const AUTO_MS = 7000;
-const nameLoop = [...villas, ...villas, ...villas];
 
 export function VillaTypes() {
   const [index, setIndex] = useState(0);
@@ -28,9 +27,17 @@ export function VillaTypes() {
   useLayoutEffect(() => {
     function centerName() {
       const nav = navRef.current;
+      const row = rowRef.current;
       const tab = tabRefs.current[index];
-      if (!nav || !tab) return;
-      setNameShift(nav.clientWidth / 2 - (tab.offsetLeft + tab.offsetWidth / 2));
+      if (!nav || !row || !tab) return;
+      const navWidth = nav.clientWidth;
+      const rowWidth = row.scrollWidth;
+      if (rowWidth <= navWidth) {
+        setNameShift((navWidth - rowWidth) / 2);
+      } else {
+        const raw = navWidth / 2 - (tab.offsetLeft + tab.offsetWidth / 2);
+        setNameShift(Math.min(0, Math.max(navWidth - rowWidth, raw)));
+      }
       setNamesReady(true);
     }
     centerName();
@@ -73,19 +80,16 @@ export function VillaTypes() {
               transition: namesReady ? "transform 700ms ease-in-out" : "none",
             }}
           >
-            {nameLoop.map((item, i) => {
-              const villaIndex = i % villas.length;
-              const active = i === villas.length + index;
+            {villas.map((item, i) => {
+              const active = i === index;
               return (
                 <button
-                  key={`${item.slug}-${i}`}
+                  key={item.slug}
                   ref={(el) => {
-                    if (i >= villas.length && i < villas.length * 2) {
-                      tabRefs.current[villaIndex] = el;
-                    }
+                    tabRefs.current[i] = el;
                   }}
                   type="button"
-                  onClick={() => go(villaIndex)}
+                  onClick={() => go(i)}
                   className={`relative shrink-0 pb-2.5 font-display text-base tracking-wide sm:text-lg ${
                     active ? "text-ink" : "text-muted hover:text-ink"
                   }`}

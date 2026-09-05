@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { utsav } from "@/content/utsav";
 import { Lightbox } from "@/components/lightbox";
 import { Photo } from "@/components/photo";
@@ -13,37 +13,13 @@ export function VillaTypes() {
   const [paused, setPaused] = useState(false);
   const [planOpen, setPlanOpen] = useState(false);
   const startX = useRef(0);
-  const navRef = useRef<HTMLElement>(null);
-  const rowRef = useRef<HTMLDivElement>(null);
-  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const [nameShift, setNameShift] = useState(0);
-  const [namesReady, setNamesReady] = useState(false);
   const villa = villas[index];
+  const prevVilla = index > 0 ? villas[index - 1] : null;
+  const nextVilla = index < villas.length - 1 ? villas[index + 1] : null;
 
   function go(next: number) {
     setIndex((next + villas.length) % villas.length);
   }
-
-  useLayoutEffect(() => {
-    function centerName() {
-      const nav = navRef.current;
-      const row = rowRef.current;
-      const tab = tabRefs.current[index];
-      if (!nav || !row || !tab) return;
-      const navWidth = nav.clientWidth;
-      const rowWidth = row.scrollWidth;
-      if (rowWidth <= navWidth) {
-        setNameShift((navWidth - rowWidth) / 2);
-      } else {
-        const raw = navWidth / 2 - (tab.offsetLeft + tab.offsetWidth / 2);
-        setNameShift(Math.min(0, Math.max(navWidth - rowWidth, raw)));
-      }
-      setNamesReady(true);
-    }
-    centerName();
-    window.addEventListener("resize", centerName);
-    return () => window.removeEventListener("resize", centerName);
-  }, [index]);
 
   useEffect(() => {
     if (paused || planOpen) return;
@@ -62,52 +38,48 @@ export function VillaTypes() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="mb-8 flex items-center gap-3 sm:gap-5">
+      <div className="mb-8 flex items-center gap-2 sm:gap-5">
         <button
           type="button"
           aria-label="Previous villa"
           onClick={() => go(index - 1)}
-          className="hidden h-9 w-9 shrink-0 items-center justify-center text-lg text-gold-deep hover:text-ink md:flex"
+          className="flex h-9 w-9 shrink-0 items-center justify-center text-lg text-gold-deep hover:text-ink"
         >
           ‹
         </button>
-        <nav ref={navRef} className="min-w-0 flex-1 overflow-hidden">
-          <div
-            ref={rowRef}
-            className="flex w-max items-end gap-8 sm:gap-12"
-            style={{
-              transform: `translateX(${nameShift}px)`,
-              transition: namesReady ? "transform 700ms ease-in-out" : "none",
-            }}
-          >
-            {villas.map((item, i) => {
-              const active = i === index;
-              return (
-                <button
-                  key={item.slug}
-                  ref={(el) => {
-                    tabRefs.current[i] = el;
-                  }}
-                  type="button"
-                  onClick={() => go(i)}
-                  className={`relative shrink-0 pb-2.5 font-display text-base tracking-wide sm:text-lg ${
-                    active ? "text-ink" : "text-muted hover:text-ink"
-                  }`}
-                >
-                  {item.name}
-                  <span
-                    className={`absolute inset-x-0 bottom-0 h-px ${active ? "bg-gold" : "bg-transparent"}`}
-                  />
-                </button>
-              );
-            })}
-          </div>
+        <nav className="grid min-w-0 flex-1 grid-cols-3 items-end gap-2 sm:gap-4">
+          {prevVilla ? (
+            <button
+              type="button"
+              onClick={() => go(index - 1)}
+              className="truncate pb-2.5 text-left font-display text-sm tracking-wide text-muted hover:text-ink sm:text-base"
+            >
+              {prevVilla.name}
+            </button>
+          ) : (
+            <span />
+          )}
+          <p className="relative truncate pb-2.5 text-center font-display text-lg tracking-wide text-ink sm:text-xl">
+            {villa.name}
+            <span className="absolute inset-x-4 bottom-0 h-px bg-gold sm:inset-x-8" />
+          </p>
+          {nextVilla ? (
+            <button
+              type="button"
+              onClick={() => go(index + 1)}
+              className="truncate pb-2.5 text-right font-display text-sm tracking-wide text-muted hover:text-ink sm:text-base"
+            >
+              {nextVilla.name}
+            </button>
+          ) : (
+            <span />
+          )}
         </nav>
         <button
           type="button"
           aria-label="Next villa"
           onClick={() => go(index + 1)}
-          className="hidden h-9 w-9 shrink-0 items-center justify-center text-lg text-gold-deep hover:text-ink md:flex"
+          className="flex h-9 w-9 shrink-0 items-center justify-center text-lg text-gold-deep hover:text-ink"
         >
           ›
         </button>

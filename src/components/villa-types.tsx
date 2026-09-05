@@ -1,12 +1,13 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { utsav } from "@/content/utsav";
 import { Lightbox } from "@/components/lightbox";
 import { Photo } from "@/components/photo";
 
 const villas = utsav.villas;
 const AUTO_MS = 7000;
+const nameLoop = [...villas, ...villas, ...villas];
 
 export function VillaTypes() {
   const [index, setIndex] = useState(0);
@@ -14,21 +15,27 @@ export function VillaTypes() {
   const [planOpen, setPlanOpen] = useState(false);
   const startX = useRef(0);
   const navRef = useRef<HTMLElement>(null);
+  const rowRef = useRef<HTMLDivElement>(null);
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const [nameShift, setNameShift] = useState(0);
+  const [namesReady, setNamesReady] = useState(false);
   const villa = villas[index];
 
   function go(next: number) {
     setIndex((next + villas.length) % villas.length);
   }
 
-  useEffect(() => {
-    const nav = navRef.current;
-    const tab = tabRefs.current[index];
-    if (!nav || !tab) return;
-    const navBox = nav.getBoundingClientRect();
-    const tabBox = tab.getBoundingClientRect();
-    const offset = tabBox.left - navBox.left - navBox.width / 2 + tabBox.width / 2;
-    nav.scrollTo({ left: nav.scrollLeft + offset, behavior: "smooth" });
+  useLayoutEffect(() => {
+    function centerName() {
+      const nav = navRef.current;
+      const tab = tabRefs.current[index];
+      if (!nav || !tab) return;
+      setNameShift(nav.clientWidth / 2 - (tab.offsetLeft + tab.offsetWidth / 2));
+      setNamesReady(true);
+    }
+    centerName();
+    window.addEventListener("resize", centerName);
+    return () => window.removeEventListener("resize", centerName);
   }, [index]);
 
   useEffect(() => {
@@ -57,31 +64,40 @@ export function VillaTypes() {
         >
           ‹
         </button>
-        <nav
-          ref={navRef}
-          className="hide-scroll flex min-w-0 flex-1 items-end justify-start gap-6 overflow-x-auto sm:justify-center sm:gap-10"
-        >
-          {villas.map((item, i) => {
-            const active = i === index;
-            return (
-              <button
-                key={item.slug}
-                ref={(el) => {
-                  tabRefs.current[i] = el;
-                }}
-                type="button"
-                onClick={() => go(i)}
-                className={`relative shrink-0 pb-2.5 font-display text-base tracking-wide sm:text-lg ${
-                  active ? "text-ink" : "text-muted hover:text-ink"
-                }`}
-              >
-                {item.name}
-                <span
-                  className={`absolute inset-x-0 bottom-0 h-px ${active ? "bg-gold" : "bg-transparent"}`}
-                />
-              </button>
-            );
-          })}
+        <nav ref={navRef} className="min-w-0 flex-1 overflow-hidden">
+          <div
+            ref={rowRef}
+            className="flex w-max items-end gap-8 sm:gap-12"
+            style={{
+              transform: `translateX(${nameShift}px)`,
+              transition: namesReady ? "transform 700ms ease-in-out" : "none",
+            }}
+          >
+            {nameLoop.map((item, i) => {
+              const villaIndex = i % villas.length;
+              const active = i === villas.length + index;
+              return (
+                <button
+                  key={`${item.slug}-${i}`}
+                  ref={(el) => {
+                    if (i >= villas.length && i < villas.length * 2) {
+                      tabRefs.current[villaIndex] = el;
+                    }
+                  }}
+                  type="button"
+                  onClick={() => go(villaIndex)}
+                  className={`relative shrink-0 pb-2.5 font-display text-base tracking-wide sm:text-lg ${
+                    active ? "text-ink" : "text-muted hover:text-ink"
+                  }`}
+                >
+                  {item.name}
+                  <span
+                    className={`absolute inset-x-0 bottom-0 h-px ${active ? "bg-gold" : "bg-transparent"}`}
+                  />
+                </button>
+              );
+            })}
+          </div>
         </nav>
         <button
           type="button"

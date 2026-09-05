@@ -15,12 +15,14 @@ export default function HomePage() {
           className="object-cover object-[center_65%]"
           sizes="100vw"
         />
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-ink/70 to-transparent" />
+        <div className="absolute inset-0 bg-ink/30" />
+        <div className="absolute inset-y-0 left-0 w-full max-w-3xl bg-linear-to-r from-ink/55 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-3/5 bg-linear-to-t from-ink/80 via-ink/35 to-transparent" />
         <div className="relative z-10 mx-auto flex h-full min-h-svh max-w-6xl flex-col justify-end px-4 pb-16 pt-24 sm:px-8 sm:pb-20">
-          <h1 className="max-w-3xl font-display text-4xl leading-tight text-white sm:text-6xl">
+          <h1 className="max-w-3xl font-display text-4xl leading-tight text-white [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-6xl">
             Creating considered homes in East Bengaluru.
           </h1>
-          <p className="mt-4 max-w-xl text-sm leading-7 text-white/85 sm:text-base">
+          <p className="mt-4 max-w-xl text-sm leading-7 text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.5)] sm:text-base">
             Premium 4BHK gated villas at Dasara Utsav, Chikkatirupathi, between Whitefield and
             Sarjapur.
           </p>

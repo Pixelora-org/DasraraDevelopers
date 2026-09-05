@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { utsav } from "@/content/utsav";
 import { Lightbox } from "@/components/lightbox";
 import { Photo } from "@/components/photo";
@@ -13,28 +13,13 @@ export function VillaTypes() {
   const [paused, setPaused] = useState(false);
   const [planOpen, setPlanOpen] = useState(false);
   const startX = useRef(0);
-  const navRef = useRef<HTMLElement>(null);
-  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
-  const [nameShift, setNameShift] = useState(0);
-  const [namesReady, setNamesReady] = useState(false);
   const villa = villas[index];
+  const prevVilla = index > 0 ? villas[index - 1] : null;
+  const nextVilla = index < villas.length - 1 ? villas[index + 1] : null;
 
   function go(next: number) {
     setIndex((next + villas.length) % villas.length);
   }
-
-  useLayoutEffect(() => {
-    function centerName() {
-      const nav = navRef.current;
-      const tab = tabRefs.current[index];
-      if (!nav || !tab) return;
-      setNameShift(nav.clientWidth / 2 - (tab.offsetLeft + tab.offsetWidth / 2));
-      setNamesReady(true);
-    }
-    centerName();
-    window.addEventListener("resize", centerName);
-    return () => window.removeEventListener("resize", centerName);
-  }, [index]);
 
   useEffect(() => {
     if (paused || planOpen) return;
@@ -53,7 +38,7 @@ export function VillaTypes() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="mb-8 flex items-center gap-2 sm:gap-5">
+      <div className="mb-8 flex items-center justify-center gap-4 sm:gap-6">
         <button
           type="button"
           aria-label="Previous villa"
@@ -62,44 +47,32 @@ export function VillaTypes() {
         >
           ‹
         </button>
-        <nav
-          ref={navRef}
-          className="min-w-0 flex-1 overflow-hidden"
-          style={{
-            WebkitMaskImage:
-              "linear-gradient(to right, transparent, black 16%, black 84%, transparent)",
-            maskImage:
-              "linear-gradient(to right, transparent, black 16%, black 84%, transparent)",
-          }}
-        >
-          <div
-            className="flex w-max items-end gap-8 sm:gap-12"
-            style={{
-              transform: `translateX(${nameShift}px)`,
-              transition: namesReady ? "transform 700ms ease-in-out" : "none",
-            }}
-          >
-            {villas.map((item, i) => {
-              const active = i === index;
-              return (
-                <button
-                  key={item.slug}
-                  ref={(el) => {
-                    tabRefs.current[i] = el;
-                  }}
-                  type="button"
-                  onClick={() => go(i)}
-                  className={`relative shrink-0 pb-2.5 font-display text-base tracking-wide sm:text-lg ${
-                    active ? "text-ink" : "text-muted hover:text-ink"
-                  }`}
-                >
-                  {item.name}
-                  <span
-                    className={`absolute inset-x-0 bottom-0 h-px ${active ? "bg-gold" : "bg-transparent"}`}
-                  />
-                </button>
-              );
-            })}
+        <nav className="flex items-end justify-center gap-6 sm:gap-8">
+          <div className="w-24 text-right sm:w-28">
+            {prevVilla ? (
+              <button
+                type="button"
+                onClick={() => go(index - 1)}
+                className="pb-2.5 font-display text-sm tracking-wide text-muted hover:text-ink sm:text-base"
+              >
+                {prevVilla.name}
+              </button>
+            ) : null}
+          </div>
+          <p className="relative w-36 pb-2.5 text-center font-display text-lg tracking-wide text-ink sm:w-40 sm:text-xl">
+            {villa.name}
+            <span className="absolute inset-x-2 bottom-0 h-px bg-gold" />
+          </p>
+          <div className="w-24 text-left sm:w-28">
+            {nextVilla ? (
+              <button
+                type="button"
+                onClick={() => go(index + 1)}
+                className="pb-2.5 font-display text-sm tracking-wide text-muted hover:text-ink sm:text-base"
+              >
+                {nextVilla.name}
+              </button>
+            ) : null}
           </div>
         </nav>
         <button

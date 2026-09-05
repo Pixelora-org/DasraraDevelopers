@@ -31,7 +31,7 @@ export const utsav = {
       plot: "30 × 50",
       plotSqft: "1,500",
       builtUp: "3,350",
-      image: "/images/villa-vaibhava.png?v=4",
+      image: "/images/villa-vaibhava.webp",
       plan: "/images/plan-vaibhava.png",
     },
     {
@@ -41,7 +41,7 @@ export const utsav = {
       plot: "35 × 50",
       plotSqft: "1,750",
       builtUp: "3,870",
-      image: "/images/villa-samruddhi.png?v=4",
+      image: "/images/villa-samruddhi.webp",
       plan: "/images/plan-samruddhi.png",
     },
     {
@@ -51,7 +51,7 @@ export const utsav = {
       plot: "30 × 40",
       plotSqft: "1,200",
       builtUp: "2,895",
-      image: "/images/villa-sambhrama.png?v=4",
+      image: "/images/villa-sambhrama.webp",
       plan: "/images/plan-sambhrama.png",
     },
     {
@@ -61,7 +61,7 @@ export const utsav = {
       plot: "35 × 40",
       plotSqft: "1,400",
       builtUp: "3,228",
-      image: "/images/villa-harsha.png?v=4",
+      image: "/images/villa-harsha.webp",
       plan: "/images/plan-harsha.png",
     },
     {
@@ -71,7 +71,7 @@ export const utsav = {
       plot: "35 × 50",
       plotSqft: "1,750",
       builtUp: "3,870",
-      image: "/images/villa-mangala.png?v=4",
+      image: "/images/villa-mangala.webp",
       plan: "/images/plan-mangala.png",
     },
     {
@@ -81,7 +81,7 @@ export const utsav = {
       plot: "30 × 50",
       plotSqft: "1,500",
       builtUp: "3,350",
-      image: "/images/villa-vijaya.png?v=4",
+      image: "/images/villa-vijaya.webp",
       plan: "/images/plan-vijaya.png",
     },
   ],
@@ -99,42 +99,42 @@ export const utsav = {
     {
       title: "Clubhouse",
       text: "6,620 sq.ft across levels for fitness, indoor games, lounge, and guest rooms.",
-      image: "/images/amenities/clubhouse.png",
+      image: "/images/amenities/clubhouse.webp",
     },
     {
       title: "Swimming pool",
       text: "Main pool with a toddler pool, filtration, and outdoor deck.",
-      image: "/images/amenities/pool.png?v=4",
+      image: "/images/amenities/pool.webp",
     },
     {
       title: "Multipurpose hall",
       text: "A hall and outdoor function space for celebrations and community evenings.",
-      image: "/images/amenities/hall.png",
+      image: "/images/amenities/hall.webp",
     },
     {
       title: "Gym & meditation",
       text: "Dedicated wellness rooms with change, lockers, and quiet corners.",
-      image: "/images/amenities/gym.png",
+      image: "/images/amenities/gym.webp",
     },
     {
       title: "Guest rooms",
       text: "Clubhouse guest bedrooms so visitors stay within the community.",
-      image: "/images/amenities/guest.png",
+      image: "/images/amenities/guest.webp",
     },
     {
       title: "Parks & party lawn",
       text: "Park-1, Park-2, and a party lawn set into the master plan.",
-      image: "/images/amenities/park.png",
+      image: "/images/amenities/park.webp",
     },
     {
       title: "30-ft internal roads",
       text: "Wide paved roads, street lighting, and avenue plantation.",
-      image: "/images/amenities/roads.png",
+      image: "/images/amenities/roads.webp",
     },
     {
       title: "Gated security",
       text: "Grand entrance, security cabin, CCTV, and controlled access.",
-      image: "/images/amenities/gate.png",
+      image: "/images/amenities/gate.webp",
     },
   ],
   masterPlan: {

@@ -1,6 +1,6 @@
-import Image from "next/image";
 import type { Metadata } from "next";
 import { utsav } from "@/content/utsav";
+import { Photo } from "@/components/photo";
 import { VillaTypes } from "@/components/villa-types";
 import { EnquireForm } from "@/components/enquire-form";
 
@@ -13,8 +13,8 @@ export default function UtsavPage() {
   return (
     <>
       <section className="relative min-h-[50vh] overflow-hidden bg-cream">
-        <Image
-          src="/images/lifestyle.png"
+        <Photo
+          src="/images/lifestyle.webp"
           alt="Dasara Utsav"
           fill
           priority
@@ -65,7 +65,7 @@ export default function UtsavPage() {
             </ul>
           </div>
           <div className="relative aspect-4/3 overflow-hidden bg-cream">
-            <Image
+            <Photo
               src={utsav.masterPlan.image}
               alt="Master plan"
               fill
@@ -84,7 +84,7 @@ export default function UtsavPage() {
             {utsav.amenities.map((item) => (
               <article key={item.title} className="overflow-hidden bg-white">
                 <div className="relative aspect-4/3">
-                  <Image
+                  <Photo
                     src={item.image}
                     alt={item.title}
                     fill

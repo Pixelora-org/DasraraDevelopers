@@ -1,5 +1,5 @@
-import Image from "next/image";
 import Link from "next/link";
+import { Photo } from "@/components/photo";
 import { site } from "@/content/site";
 import { utsav } from "@/content/utsav";
 
@@ -7,8 +7,8 @@ export default function HomePage() {
   return (
     <>
       <section className="relative h-svh min-h-svh overflow-hidden bg-cream">
-        <Image
-          src="/images/street.png"
+        <Photo
+          src="/images/street.webp"
           alt="Dasara Utsav villa community"
           fill
           priority
@@ -69,8 +69,8 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="relative aspect-5/4 overflow-hidden lg:col-span-7">
-            <Image
-              src="/images/lifestyle.png"
+            <Photo
+              src="/images/lifestyle.webp"
               alt="Dasara Utsav"
               fill
               className="object-cover"

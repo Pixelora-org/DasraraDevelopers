@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { utsav } from "@/content/utsav";
 import { Lightbox } from "@/components/lightbox";
+import { Photo } from "@/components/photo";
 
 const villas = utsav.villas;
 const AUTO_MS = 7000;
@@ -113,16 +113,24 @@ export function VillaTypes() {
             transition: "transform 700ms ease-in-out",
           }}
         >
-          {villas.map((item) => (
+          {villas.map((item, i) => {
+            const nearby =
+              Math.abs(i - index) <= 1 ||
+              (index === 0 && i === villas.length - 1) ||
+              (index === villas.length - 1 && i === 0);
+            return (
             <article
               key={item.slug}
               className="grid w-full min-w-0 shrink-0 basis-full items-center overflow-hidden lg:grid-cols-12"
             >
               <div className="relative aspect-[4/5] overflow-hidden bg-cream lg:col-span-7 lg:aspect-[10/11]">
-                <Image
+                <Photo
                   src={item.image}
                   alt={`${item.name} villa`}
                   fill
+                  {...(i === 0
+                    ? { priority: true }
+                    : { loading: nearby ? "eager" : "lazy" })}
                   className="max-w-none object-contain object-center"
                   sizes="(min-width: 1024px) 50vw, 100vw"
                 />
@@ -157,7 +165,8 @@ export function VillaTypes() {
                 </div>
               </div>
             </article>
-          ))}
+            );
+          })}
         </div>
       </div>
 

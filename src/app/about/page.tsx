@@ -1,6 +1,6 @@
-import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Photo } from "@/components/photo";
 import { site } from "@/content/site";
 import { utsav } from "@/content/utsav";
 
@@ -40,8 +40,8 @@ export default function AboutPage() {
             </p>
           </div>
           <div className="relative aspect-4/5 overflow-hidden lg:col-span-6">
-            <Image
-              src="/images/pool-clean.png?v=4"
+            <Photo
+              src="/images/pool-clean.webp"
               alt="Dasara Utsav clubhouse pool"
               fill
               className="object-cover object-center"
@@ -54,8 +54,8 @@ export default function AboutPage() {
       <section className="bg-white">
         <div className="mx-auto grid max-w-6xl gap-4 px-4 pb-14 sm:grid-cols-2 sm:px-8">
           <figure className="relative aspect-4/3 overflow-hidden bg-cream">
-            <Image
-              src="/images/community.png"
+            <Photo
+              src="/images/community.webp"
               alt="Dasara Utsav villa street"
               fill
               className="object-cover"
@@ -66,8 +66,8 @@ export default function AboutPage() {
             </figcaption>
           </figure>
           <figure className="relative aspect-4/3 overflow-hidden bg-cream">
-            <Image
-              src="/images/amenities/clubhouse.png"
+            <Photo
+              src="/images/amenities/clubhouse.webp"
               alt="Dasara Utsav clubhouse"
               fill
               className="object-cover"

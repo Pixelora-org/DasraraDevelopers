@@ -14,7 +14,14 @@ export function SiteFooter() {
     <footer className="border-t border-line bg-cream text-ink">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-8 md:grid-cols-12 md:py-16">
         <div className="md:col-span-5">
-          <Image src={site.logo} alt="Dasara Developers" width={200} height={52} className="h-12 w-auto" />
+          <Image
+            src={site.logo}
+            alt="Dasara Developers"
+            width={200}
+            height={40}
+            sizes="200px"
+            className="h-12 w-auto"
+          />
           <p className="mt-4 max-w-sm text-sm leading-7 text-muted">
             Premium 4BHK gated villas between Whitefield and Sarjapur. Founded {site.founded}.
           </p>

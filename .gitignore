@@ -55,4 +55,7 @@ next-env.d.ts
 *.zip
 /Dasara Utsav Brochure*.pdf
 
+# full-size PNG sources — the site ships WebP only
+/public/images/**/*.png
+
 .vercel

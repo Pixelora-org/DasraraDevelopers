@@ -42,7 +42,8 @@ export function SiteHeader() {
             src={site.logoOnDark}
             alt="Dasara Developers"
             width={220}
-            height={56}
+            height={44}
+            sizes="220px"
             className="h-10 w-auto sm:h-12"
             priority
           />

@@ -9,8 +9,8 @@ export const site = {
   motto: "Together we grow",
   emails: ["info.utsav@dasaradevelopers.com"],
   website: "https://www.dasaradevelopers.com",
-  logo: "/brand/logo.png",
-  logoOnDark: "/brand/logo-white.png",
+  logo: "/brand/logo.webp",
+  logoOnDark: "/brand/logo-white.webp",
   phones: [
     { label: "+91 96069 50403", href: "tel:+919606950403" },
     { label: "+91 97380 54074", href: "tel:+919738054074" },

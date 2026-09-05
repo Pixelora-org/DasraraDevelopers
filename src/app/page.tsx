@@ -12,10 +12,10 @@ export default function HomePage() {
           alt="Dasara Utsav villa community"
           fill
           priority
-          className="object-contain object-center"
+          className="object-cover object-[center_65%]"
           sizes="100vw"
         />
-        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-ink/75 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-ink/70 to-transparent" />
         <div className="relative z-10 mx-auto flex h-full min-h-svh max-w-6xl flex-col justify-end px-4 pb-16 pt-24 sm:px-8 sm:pb-20">
           <h1 className="max-w-3xl font-display text-4xl leading-tight text-white sm:text-6xl">
             Creating considered homes in East Bengaluru.
@@ -70,7 +70,7 @@ export default function HomePage() {
           </div>
           <div className="relative aspect-5/4 overflow-hidden lg:col-span-7">
             <Photo
-              src="/images/hero-dusk.webp"
+              src="/images/lifestyle.webp"
               alt="Dasara Utsav"
               fill
               className="object-cover"

@@ -14,7 +14,7 @@ export default function UtsavPage() {
     <>
       <section className="relative min-h-[50vh] overflow-hidden bg-cream">
         <Photo
-          src="/images/hero-dusk.webp"
+          src="/images/lifestyle.webp"
           alt="Dasara Utsav"
           fill
           priority

@@ -1,6 +1,5 @@
 export const utsav = {
   name: "Dasara Utsav",
-  kicker: "Lifestyle Community Villas",
   headline: "Experience elevated living in the heart of nature",
   location: "Chikkatirupathi, Off Sarjapur / Off Whitefield, Bengaluru",
   shortLocation: "Between Whitefield & Sarjapur",

@@ -23,8 +23,7 @@ export default function UtsavPage() {
         />
         <div className="absolute inset-0 bg-linear-to-t from-ink/70 to-transparent" />
         <div className="relative z-10 mx-auto flex min-h-[50vh] max-w-6xl flex-col justify-end px-4 py-10 sm:px-8">
-          <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold">{utsav.kicker}</p>
-          <h1 className="mt-2 font-display text-4xl text-white sm:text-6xl">{utsav.name}</h1>
+          <h1 className="font-display text-4xl text-white sm:text-6xl">{utsav.name}</h1>
           <p className="mt-3 text-sm text-white/85 sm:text-base">
             {utsav.shortLocation} · {utsav.village}
           </p>

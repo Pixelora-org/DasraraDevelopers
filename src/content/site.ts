@@ -1,7 +1,6 @@
 export const site = {
   name: "Dasara Developers",
   project: "Dasara Utsav",
-  tagline: "Lifestyle Community Villas",
   founded: 2010,
   founder: {
     name: "Kodanda Reddy",

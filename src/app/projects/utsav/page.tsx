@@ -21,10 +21,13 @@ export default function UtsavPage() {
           className="object-cover object-center"
           sizes="100vw"
         />
-        <div className="absolute inset-0 bg-linear-to-t from-ink/70 to-transparent" />
+        <div className="absolute inset-0 bg-ink/30" />
+        <div className="absolute inset-x-0 bottom-0 h-3/5 bg-linear-to-t from-ink/80 via-ink/40 to-transparent" />
         <div className="relative z-10 mx-auto flex min-h-[50vh] max-w-6xl flex-col justify-end px-4 py-10 sm:px-8">
-          <h1 className="font-display text-4xl text-white sm:text-6xl">{utsav.name}</h1>
-          <p className="mt-3 text-sm text-white/85 sm:text-base">
+          <h1 className="font-display text-4xl text-white [text-shadow:0_2px_16px_rgba(0,0,0,0.55)] sm:text-6xl">
+            {utsav.name}
+          </h1>
+          <p className="mt-3 text-sm text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.5)] sm:text-base">
             {utsav.shortLocation} · {utsav.village}
           </p>
         </div>

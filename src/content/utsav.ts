@@ -31,7 +31,7 @@ export const utsav = {
       plotSqft: "1,500",
       builtUp: "3,350",
       image: "/images/villa-vaibhava.webp",
-      plan: "/images/plan-vaibhava.png",
+      plan: "/images/plan-vaibhava.webp",
     },
     {
       slug: "samruddhi",
@@ -41,7 +41,7 @@ export const utsav = {
       plotSqft: "1,750",
       builtUp: "3,870",
       image: "/images/villa-samruddhi.webp",
-      plan: "/images/plan-samruddhi.png",
+      plan: "/images/plan-samruddhi.webp",
     },
     {
       slug: "sambhrama",
@@ -51,7 +51,7 @@ export const utsav = {
       plotSqft: "1,200",
       builtUp: "2,895",
       image: "/images/villa-sambhrama.webp",
-      plan: "/images/plan-sambhrama.png",
+      plan: "/images/plan-sambhrama.webp",
     },
     {
       slug: "harsha",
@@ -61,7 +61,7 @@ export const utsav = {
       plotSqft: "1,400",
       builtUp: "3,228",
       image: "/images/villa-harsha.webp",
-      plan: "/images/plan-harsha.png",
+      plan: "/images/plan-harsha.webp",
     },
     {
       slug: "mangala",
@@ -71,7 +71,7 @@ export const utsav = {
       plotSqft: "1,750",
       builtUp: "3,870",
       image: "/images/villa-mangala.webp",
-      plan: "/images/plan-mangala.png",
+      plan: "/images/plan-mangala.webp",
     },
     {
       slug: "vijaya",
@@ -81,7 +81,7 @@ export const utsav = {
       plotSqft: "1,500",
       builtUp: "3,350",
       image: "/images/villa-vijaya.webp",
-      plan: "/images/plan-vijaya.png",
+      plan: "/images/plan-vijaya.webp",
     },
   ],
   villaFeatures: [
@@ -137,7 +137,7 @@ export const utsav = {
     },
   ],
   masterPlan: {
-    image: "/images/master-plan.png",
+    image: "/images/master-plan.webp",
     items: [
       "Park-1 & Park-2",
       "Swimming pool",

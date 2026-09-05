@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { Photo } from "@/components/photo";
 
 export function Lightbox({
   src,
@@ -39,13 +40,19 @@ export function Lightbox({
       >
         ×
       </button>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        src={src}
-        alt={alt}
-        className="max-h-[82dvh] w-full max-w-5xl object-contain"
+      <div
+        className="relative h-[82dvh] w-full max-w-5xl"
         onClick={(event) => event.stopPropagation()}
-      />
+      >
+        <Photo
+          src={src}
+          alt={alt}
+          fill
+          fade={false}
+          className="object-contain"
+          sizes="(min-width: 1024px) 64rem, 100vw"
+        />
+      </div>
     </div>
   );
 }

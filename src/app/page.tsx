@@ -12,7 +12,6 @@ export default function HomePage() {
           alt="Dasara Utsav villa community"
           fill
           priority
-          quality={90}
           className="object-contain object-center"
           sizes="100vw"
         />

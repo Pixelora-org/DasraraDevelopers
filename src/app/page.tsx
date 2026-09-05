@@ -8,8 +8,8 @@ export default function HomePage() {
     <>
       <section className="relative h-svh min-h-svh overflow-hidden bg-cream">
         <Photo
-          src="/images/hero-entrance.webp"
-          alt="Dasara Utsav gated entrance"
+          src="/images/hero-landing.webp"
+          alt="Dasara Utsav villa community"
           fill
           priority
           className="object-cover object-center"

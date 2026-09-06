@@ -69,7 +69,7 @@ export default function UtsavPage() {
           <div className="relative aspect-4/3 overflow-hidden bg-cream">
             <Photo
               src={utsav.masterPlan.image}
-              alt="Master plan"
+              alt="Dasara Utsav connectivity map"
               fill
               className="object-contain p-3"
               sizes="(min-width: 1024px) 45vw, 100vw"

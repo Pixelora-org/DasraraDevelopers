@@ -1,7 +1,5 @@
 export const site = {
   name: "Dasara Developers",
-  project: "Dasara Utsav",
-  founded: 2010,
   founder: {
     name: "Kodanda Reddy",
     role: "Founder",
@@ -10,7 +8,6 @@ export const site = {
   emails: ["info.utsav@dasaradevelopers.com"],
   website: "https://www.dasaradevelopers.com",
   logo: "/brand/logo.webp",
-  logoOnDark: "/brand/logo-white.webp",
   phones: [
     { label: "+91 96069 50403", href: "tel:+919606950403" },
     { label: "+91 97380 54074", href: "tel:+919738054074" },
@@ -27,10 +24,6 @@ export const site = {
     embed:
       "https://maps.google.com/maps?q=12.905363082885742,77.8931884765625&z=17&hl=en&output=embed",
   },
-  partners: [
-    { role: "Architect", name: "V Dot Architect", place: "Bangalore" },
-    { role: "Strategic partner", name: "Pristine Property Solutions", place: "Bangalore" },
-  ],
   nav: [
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },

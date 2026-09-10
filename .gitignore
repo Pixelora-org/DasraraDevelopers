@@ -50,10 +50,12 @@ next-env.d.ts
 # brochure raster scratch
 /tmp-brochure
 /tmp-new-assets
+/tmp-plans
 
 # source packs kept local, not shipped
 *.zip
 /Dasara Utsav Brochure*.pdf
+/public/brochure/
 
 # full-size PNG sources — the site ships WebP only
 /public/images/**/*.png

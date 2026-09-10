@@ -28,18 +28,18 @@ export function SiteHeader() {
   if (pathname.startsWith("/owner")) return null;
 
   const linkClass = (active: boolean) =>
-    `pb-1 text-[0.82rem] tracking-[0.12em] text-white hover:text-gold ${
-      active ? "border-b border-white" : "border-b border-transparent"
+    `pb-1 text-[0.82rem] tracking-[0.12em] text-ink hover:text-gold-deep ${
+      active ? "border-b border-ink" : "border-b border-transparent"
     }`;
 
   return (
     <header
-      className={`top-0 z-50 w-full bg-ink/55 backdrop-blur-md ${isHome ? "fixed inset-x-0" : "sticky inset-x-0"}`}
+      className={`top-0 z-50 w-full border-b border-line/50 bg-white/85 backdrop-blur-sm ${isHome ? "fixed inset-x-0" : "sticky inset-x-0"}`}
     >
       <div className="relative mx-auto flex h-18 w-full max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-8 lg:px-12">
         <Link href="/" className="relative z-10 shrink-0">
           <Image
-            src={site.logoOnDark}
+            src={site.logo}
             alt="Dasara Developers"
             width={220}
             height={44}
@@ -77,7 +77,7 @@ export function SiteHeader() {
               </button>
               {projectsOpen ? (
                 <div className="absolute left-1/2 top-full z-20 w-72 -translate-x-1/2 pt-4">
-                  <div className="bg-ink/95 px-6 py-5 text-left shadow-lg backdrop-blur-md">
+                  <div className="border border-line bg-white px-6 py-5 text-left shadow-lg">
                     {site.projects.map((project) => (
                       <Link
                         key={project.href}
@@ -85,8 +85,8 @@ export function SiteHeader() {
                         className="block"
                         onClick={() => setProjectsOpen(false)}
                       >
-                        <span className="block text-sm text-white">{project.name}</span>
-                        <span className="mt-1 block text-[0.7rem] text-white/55">{project.place}</span>
+                        <span className="block text-sm text-ink">{project.name}</span>
+                        <span className="mt-1 block text-[0.7rem] text-muted">{project.place}</span>
                       </Link>
                     ))}
                   </div>
@@ -103,14 +103,14 @@ export function SiteHeader() {
         <div className="relative z-10 flex shrink-0 items-center">
           <Link
             href="/contact"
-            className="hidden items-center gap-2 text-[0.72rem] tracking-[0.16em] uppercase text-white hover:text-gold md:inline-flex"
+            className="hidden items-center gap-2 text-[0.72rem] tracking-[0.16em] uppercase text-ink hover:text-gold-deep md:inline-flex"
           >
             <EnquireIcon />
             Enquire
           </Link>
           <button
             type="button"
-            className="-mr-1.5 flex h-11 w-11 shrink-0 items-center justify-center text-white md:hidden"
+            className="-mr-1.5 flex h-11 w-11 shrink-0 items-center justify-center text-ink md:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             onClick={() => setOpen((v) => !v)}
           >
@@ -127,8 +127,8 @@ export function SiteHeader() {
       </div>
 
       {open ? (
-        <div className="border-t border-white/15 bg-ink/95 px-5 py-8 md:hidden">
-          <nav className="flex flex-col gap-5 text-xl text-white">
+        <div className="border-t border-line bg-white px-5 py-8 md:hidden">
+          <nav className="flex flex-col gap-5 text-xl text-ink">
             <Link href="/" onClick={() => setOpen(false)}>
               Home
             </Link>

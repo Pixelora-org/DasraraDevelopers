@@ -33,14 +33,14 @@ export const metadata: Metadata = {
     template: "%s | Dasara Developers",
   },
   description:
-    "Dasara Developers. Premium 4BHK gated villas at Dasara Utsav, Chikkatirupathi, between Whitefield and Sarjapur.",
+    "Dasara Developers. Premium 4BHK community villas at Dasara Utsav, Chikkatirupathi, between Whitefield and Sarjapur.",
   openGraph: {
     type: "website",
     locale: "en_IN",
     siteName: "Dasara Developers",
     title: "Dasara Developers | Dasara Utsav",
     description:
-      "Premium 4BHK gated villas at Dasara Utsav, Chikkatirupathi, between Whitefield and Sarjapur.",
+      "Premium 4BHK community villas at Dasara Utsav, Chikkatirupathi, between Whitefield and Sarjapur.",
   },
 };
 

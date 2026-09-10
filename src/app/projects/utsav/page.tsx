@@ -45,7 +45,7 @@ export default function UtsavPage() {
       <section id="villas" className="scroll-mt-20 bg-cream px-4 py-14 sm:px-8">
         <div className="mx-auto max-w-6xl">
           <p className="text-[0.75rem] tracking-[0.2em] uppercase text-gold-deep">Villa types</p>
-          <h2 className="mt-2 font-display text-3xl text-ink sm:text-4xl">Six 4BHK triplex homes</h2>
+          <h2 className="mt-2 font-display text-3xl text-ink sm:text-4xl">4BHK triplex homes</h2>
           <div className="mt-10">
             <VillaTypes />
           </div>
@@ -118,14 +118,23 @@ export default function UtsavPage() {
             >
               Open project location →
             </a>
-            <ul className="mt-6 grid grid-cols-1 gap-2 text-sm text-brown sm:grid-cols-2">
-              {utsav.nearby.map((place) => (
-                <li key={place} className="flex gap-2">
-                  <span className="mt-2 h-1 w-1 shrink-0 bg-gold" />
-                  {place}
-                </li>
+            <div className="mt-8 grid gap-6 sm:grid-cols-2">
+              {utsav.nearby.map((group) => (
+                <div key={group.title}>
+                  <p className="text-[0.68rem] tracking-[0.16em] uppercase text-gold-deep">
+                    {group.title}
+                  </p>
+                  <ul className="mt-2 space-y-1.5 text-sm text-brown">
+                    {group.places.map((place) => (
+                      <li key={place} className="flex gap-2">
+                        <span className="mt-2 h-1 w-1 shrink-0 bg-gold" />
+                        {place}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
           <iframe
             title="Dasara Utsav project location"
@@ -136,11 +145,11 @@ export default function UtsavPage() {
         </div>
       </section>
 
-      <section className="bg-cream px-4 py-14 pb-28 sm:px-8 md:pb-16">
+      <section id="enquire" className="scroll-mt-24 bg-cream px-4 py-14 pb-28 sm:px-8 md:pb-16">
         <div className="mx-auto grid max-w-6xl gap-10 lg:grid-cols-2">
           <div>
             <p className="text-[0.75rem] tracking-[0.2em] uppercase text-gold-deep">Enquire</p>
-            <h2 className="mt-2 font-display text-3xl text-ink">Request a site visit</h2>
+            <h2 className="mt-2 font-display text-3xl text-ink">Plan your visit</h2>
             <p className="mt-4 text-sm leading-7 text-muted">
               Share your details. We will call you back.
             </p>

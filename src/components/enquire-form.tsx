@@ -119,7 +119,7 @@ export function EnquireForm() {
           disabled={pending}
           className="w-full bg-gold px-6 py-3.5 text-[0.72rem] tracking-[0.18em] uppercase text-white hover:bg-gold-deep disabled:opacity-60"
         >
-          {pending ? "Sending..." : "Request a site visit"}
+          {pending ? "Sending..." : "Plan your visit"}
         </button>
       </div>
     </form>

@@ -7,7 +7,7 @@ import { utsav } from "@/content/utsav";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Dasara Developers builds gated homes in East Bengaluru. Founded in 2010 by Kodanda Reddy.",
+    "Dasara Developers builds community villas in East Bengaluru.",
 };
 
 export default function AboutPage() {
@@ -15,9 +15,9 @@ export default function AboutPage() {
     <>
       <section className="bg-cream">
         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-8 sm:py-20">
-          <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">Since {site.founded}</p>
+          <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">About</p>
           <h1 className="mt-4 max-w-3xl font-display text-4xl leading-tight text-ink sm:text-6xl">
-            East Bengaluru. Gated villas. A name on the gate.
+            East Bengaluru. Community villas.
           </h1>
         </div>
       </section>
@@ -28,8 +28,8 @@ export default function AboutPage() {
             <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">The story</p>
             <h2 className="mt-3 font-display text-3xl text-ink sm:text-4xl">{site.motto}</h2>
             <p className="mt-5 text-sm leading-7 text-brown sm:text-base">
-              Dasara Developers launched in {site.founded} to build homes families can show, live in,
-              and hold. We still work that way, with buyers, on land that will matter in ten years.
+              Dasara Developers builds homes families can show, live in, and hold. We still work
+              that way, with buyers, on land that will matter in ten years.
             </p>
             <p className="mt-4 text-sm leading-7 text-brown sm:text-base">
               Right now the flagship is{" "}
@@ -80,31 +80,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-cream px-4 py-14 sm:px-8">
-        <div className="mx-auto max-w-6xl">
-          <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">Founder</p>
-          <h2 className="mt-3 font-display text-3xl text-ink sm:text-5xl">{site.founder.name}</h2>
-          <p className="mt-2 text-[0.72rem] tracking-[0.16em] uppercase text-muted">{site.founder.role}</p>
-          <div className="mt-10 grid gap-10 md:grid-cols-2">
-            <div>
-              <h3 className="font-display text-2xl text-gold-deep">Vision</h3>
-              <p className="mt-3 text-sm leading-7 text-brown">
-                Homes that take price, quality, location, security, privacy, and amenities seriously,
-                so a family finds a place that fits how they live.
-              </p>
-            </div>
-            <div>
-              <h3 className="font-display text-2xl text-gold-deep">How we build</h3>
-              <p className="mt-3 text-sm leading-7 text-brown">
-                Named partners. Named specs. Utsav is designed with {site.partners[0].name},{" "}
-                {site.partners[0].place}, and brought to market with {site.partners[1].name}.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="bg-white">
+      <section className="bg-cream">
         <div className="mx-auto max-w-6xl px-4 py-14 pb-28 sm:px-8 md:pb-16">
           <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">On the land now</p>
           <div className="mt-6 flex flex-col justify-between gap-6 md:flex-row md:items-end">

@@ -23,7 +23,7 @@ export default function HomePage() {
             Creating considered homes in East Bengaluru.
           </h1>
           <p className="mt-4 max-w-xl text-sm leading-7 text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.5)] sm:text-base">
-            Premium 4BHK gated villas at Dasara Utsav, Chikkatirupathi, between Whitefield and
+            Premium 4BHK community villas at Dasara Utsav, Chikkatirupathi, between Whitefield and
             Sarjapur.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -88,8 +88,8 @@ export default function HomePage() {
           <h2 className="mt-3 font-display text-3xl text-ink sm:text-4xl">{site.founder.name}</h2>
           <p className="mt-1 text-[0.72rem] tracking-[0.16em] uppercase text-muted">{site.founder.role}</p>
           <p className="mt-5 max-w-2xl text-sm leading-7 text-brown">
-            Dasara Developers was launched in {site.founded}. Our motto is {site.motto}. We build
-            gated homes with named specifications and a real address.
+            Our motto is {site.motto}. We build community villas with named specifications and a real
+            address.
           </p>
           <Link href="/about" className="mt-6 inline-block text-[0.72rem] tracking-[0.16em] uppercase text-gold-deep">
             Our story →
@@ -101,7 +101,7 @@ export default function HomePage() {
         <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-4 py-16 pb-28 sm:px-8 md:flex-row md:items-end md:pb-16">
           <div>
             <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">Visit the land</p>
-            <h2 className="mt-3 font-display text-3xl text-ink sm:text-4xl">Request a site visit</h2>
+            <h2 className="mt-3 font-display text-3xl text-ink sm:text-4xl">Plan your visit</h2>
             <p className="mt-3 max-w-lg text-sm leading-7 text-muted">
               Walk Dasara Utsav at Chikkatirupathi. Leave your details and we will call you back.
             </p>

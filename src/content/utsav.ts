@@ -6,7 +6,7 @@ export const utsav = {
   acres: "6.08",
   rera: "PRM/KA/RERA/1265/347/PR/230726/008836",
   intro:
-    "An exclusive villa community in the landscapes of Chikkatirupathi, sold on one road: the Satellite Town Ring Road. STRR is the feasible connection out of East Bengaluru, north to Hoskote and Kempegowda International Airport (KIA), and on toward Hosur and Chandapura. It also makes Electronic City a feasible drive, and connects to the Bengaluru Chennai Expressway.",
+    "An exclusive villa community in the landscapes of Chikkatirupathi. The Satellite Town Ring Road (STRR) provides seamless connectivity from East Bengaluru, linking north to Hoskote and Kempegowda International Airport (KIA), and extending toward Hosur and Chandapura. It also makes Electronic City a feasible drive and connects to the Bengaluru-Chennai Expressway.",
   facts: [
     { value: "6.08", label: "Acres" },
     { value: "4 BHK", label: "Triplex villas" },

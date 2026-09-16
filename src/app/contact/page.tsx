@@ -15,7 +15,7 @@ export default function ContactPage() {
           <p className="text-[0.7rem] tracking-[0.2em] uppercase text-gold-deep">Contact</p>
           <h1 className="mt-3 font-display text-4xl text-ink sm:text-5xl">Book a site visit</h1>
           <p className="mt-5 text-sm leading-7 text-brown sm:text-base">
-            Walk the land at Chikkatirupathi. Leave your details and we will call you back.
+            Leave your details and we will call you back.
           </p>
 
           <dl className="mt-10 space-y-6 text-sm">

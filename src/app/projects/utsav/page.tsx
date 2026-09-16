@@ -18,7 +18,7 @@ export default function UtsavPage() {
           alt="Dasara Utsav"
           fill
           priority
-          className="object-cover object-center"
+          className="object-cover object-[center_40%]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-ink/30" />

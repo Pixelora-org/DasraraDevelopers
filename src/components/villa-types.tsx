@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, type TransitionEvent } from "react";
-import { utsav } from "@/content/utsav";
+import { utsav, type Villa } from "@/content/utsav";
 import { FloorPlanOverlay } from "@/components/floor-plan-overlay";
 import { Photo } from "@/components/photo";
 
@@ -16,11 +16,9 @@ export function VillaTypes() {
   const [animate, setAnimate] = useState(true);
   const [paused, setPaused] = useState(false);
   const [planOpen, setPlanOpen] = useState(false);
+  const [selectedVilla, setSelectedVilla] = useState<Villa | null>(null);
   const startX = useRef(0);
   const jumping = useRef(false);
-
-  const realIndex = pos === 0 ? n - 1 : pos === n + 1 ? 0 : pos - 1;
-  const villa = villas[realIndex];
 
   function go(dir: number) {
     if (jumping.current) return;
@@ -153,7 +151,10 @@ export function VillaTypes() {
                   <div className="mt-8">
                     <button
                       type="button"
-                      onClick={() => setPlanOpen(true)}
+                      onClick={() => {
+                        setSelectedVilla(item);
+                        setPlanOpen(true);
+                      }}
                       className="bg-gold px-5 py-3 text-[0.7rem] tracking-[0.16em] uppercase text-white hover:bg-gold-deep"
                     >
                       View floor plans
@@ -166,7 +167,15 @@ export function VillaTypes() {
         </div>
       </div>
 
-      {planOpen ? <FloorPlanOverlay villa={villa} onClose={() => setPlanOpen(false)} /> : null}
+      {planOpen && selectedVilla ? (
+        <FloorPlanOverlay
+          villa={selectedVilla}
+          onClose={() => {
+            setPlanOpen(false);
+            setSelectedVilla(null);
+          }}
+        />
+      ) : null}
     </div>
   );
 }

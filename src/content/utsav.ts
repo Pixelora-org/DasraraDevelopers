@@ -1,7 +1,7 @@
 export const utsav = {
   name: "Dasara Utsav",
   headline: "Experience elevated living in the heart of nature",
-  shortLocation: "Between Whitefield & Sarjapur",
+  shortLocation: "",
   village: "Chikkatirupathi",
   acres: "6.08",
   rera: "PRM/KA/RERA/1265/347/PR/230726/008836",

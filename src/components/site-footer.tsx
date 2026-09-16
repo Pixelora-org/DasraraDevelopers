@@ -23,7 +23,7 @@ export function SiteFooter() {
             className="h-12 w-auto"
           />
           <p className="mt-4 max-w-sm text-sm leading-7 text-muted">
-            Premium 4BHK community villas between Whitefield and Sarjapur.
+            Premium 4BHK community villas at Chikkatirupathi.
           </p>
         </div>
         <div className="md:col-span-3">

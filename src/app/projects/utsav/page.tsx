@@ -18,7 +18,7 @@ export default function UtsavPage() {
           alt="Dasara Utsav"
           fill
           priority
-          className="object-cover object-[center_40%]"
+          className="object-cover object-[center_35%] sm:object-[center_45%]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-ink/30" />
@@ -28,7 +28,7 @@ export default function UtsavPage() {
             {utsav.name}
           </h1>
           <p className="mt-3 text-sm text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.5)] sm:text-base">
-            {utsav.shortLocation} · {utsav.village}
+            {utsav.village}
           </p>
         </div>
       </section>

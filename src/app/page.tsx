@@ -23,8 +23,7 @@ export default function HomePage() {
             Creating considered homes in East Bengaluru.
           </h1>
           <p className="mt-4 max-w-xl text-sm leading-7 text-white [text-shadow:0_1px_10px_rgba(0,0,0,0.5)] sm:text-base">
-            Premium 4BHK community villas at Dasara Utsav, Chikkatirupathi, between Whitefield and
-            Sarjapur.
+            Premium 4BHK community villas at Dasara Utsav, Chikkatirupathi.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link

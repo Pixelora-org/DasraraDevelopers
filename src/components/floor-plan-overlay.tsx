@@ -23,7 +23,6 @@ export function FloorPlanOverlay({
   const [paused, setPaused] = useState(false);
   const startX = useRef(0);
   const current = FLOORS[floor];
-  const legend = villa.plans[current.key].legend;
 
   function go(next: number) {
     setFloor((next + FLOORS.length) % FLOORS.length);
@@ -159,20 +158,6 @@ export function FloorPlanOverlay({
           >
             ›
           </button>
-        </div>
-
-        <div className="border-t border-line bg-cream px-5 py-4 sm:px-8">
-          <p className="text-[0.68rem] tracking-[0.16em] uppercase text-gold-deep">
-            {current.label} floor
-          </p>
-          <ol className="mt-3 grid grid-cols-2 gap-x-4 gap-y-1.5 text-sm text-brown sm:grid-cols-3">
-            {legend.map((item, i) => (
-              <li key={`${i}-${item}`} className="flex gap-2">
-                <span className="w-4 shrink-0 text-[0.7rem] text-gold-deep">{i + 1}</span>
-                <span>{item}</span>
-              </li>
-            ))}
-          </ol>
         </div>
 
         <footer className="flex flex-col gap-4 border-t border-line px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-8">

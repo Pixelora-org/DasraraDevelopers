@@ -90,7 +90,9 @@ export default function UtsavPage() {
                     src={item.image}
                     alt={item.title}
                     fill
-                    className="object-cover"
+                    className={`object-cover ${
+                      item.title === "Parks & party lawn" ? "object-[center_75%]" : ""
+                    }`}
                     sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                   />
                 </div>

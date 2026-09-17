@@ -12,7 +12,7 @@ export default function HomePage() {
           alt="Dasara Utsav villa community"
           fill
           priority
-          className="object-cover object-[center_45%]"
+          className="object-cover object-[center_60%] sm:object-[center_55%]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-ink/30" />

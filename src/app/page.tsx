@@ -12,7 +12,7 @@ export default function HomePage() {
           alt="Dasara Utsav villa community"
           fill
           priority
-          className="object-cover object-[center_70%] sm:object-[center_65%]"
+          className="object-cover object-[center_16%] sm:object-[center_20%]"
           sizes="100vw"
         />
         <div className="absolute inset-0 bg-ink/30" />
@@ -87,8 +87,8 @@ export default function HomePage() {
           <h2 className="mt-3 font-display text-3xl text-ink sm:text-4xl">{site.founder.name}</h2>
           <p className="mt-1 text-[0.72rem] tracking-[0.16em] uppercase text-muted">{site.founder.role}</p>
           <p className="mt-5 max-w-2xl text-sm leading-7 text-brown">
-            Our motto is {site.motto}. We build community villas with named specifications and a real
-            address.
+            We raise villa communities in East Bengaluru and stay with the land after the gates go
+            up. Homes with names, neighbours, and room for a family to grow.
           </p>
           <Link href="/about" className="mt-6 inline-block text-[0.72rem] tracking-[0.16em] uppercase text-gold-deep">
             Our story →

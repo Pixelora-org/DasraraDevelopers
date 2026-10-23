@@ -113,7 +113,7 @@ export function FloorPlanOverlay({
         </div>
 
         <div
-          className="relative min-h-[38vh] flex-1 bg-white sm:min-h-[44vh]"
+          className="relative min-h-[38vh] flex-1 bg-cream sm:min-h-[44vh]"
           onTouchStart={(event) => {
             startX.current = event.touches[0].clientX;
             setPaused(true);
@@ -128,18 +128,20 @@ export function FloorPlanOverlay({
           {FLOORS.map((item, i) => (
             <div
               key={item.key}
-              className={`absolute inset-0 transition-opacity duration-500 ${
+              className={`absolute inset-3 transition-opacity duration-500 sm:inset-5 ${
                 i === floor ? "opacity-100" : "pointer-events-none opacity-0"
               }`}
             >
-              <Photo
-                src={villa.plans[item.key].image}
-                alt={`${villa.name} ${item.label} floor`}
-                fill
-                fade={false}
-                className="object-contain p-2 sm:p-4"
-                sizes="(min-width: 1024px) 48rem, 100vw"
-              />
+              <div className="relative h-full w-full border border-line/80 bg-cream">
+                <Photo
+                  src={villa.plans[item.key].image}
+                  alt={`${villa.name} ${item.label} floor`}
+                  fill
+                  fade={false}
+                  className="object-contain p-4 sm:p-7"
+                  sizes="(min-width: 1024px) 48rem, 100vw"
+                />
+              </div>
             </div>
           ))}
           <button

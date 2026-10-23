@@ -24,7 +24,7 @@ export const utsav = {
       image: "/images/villa-vaibhava.webp",
       plans: {
         stilt: {
-          image: "/images/plans/vaibhava-stilt.webp",
+          image: "/images/floor-plans/vaibhava-stilt.webp",
           legend: [
             "Car parking",
             "Guest bedroom",
@@ -35,7 +35,7 @@ export const utsav = {
           ],
         },
         ground: {
-          image: "/images/plans/vaibhava-ground.webp",
+          image: "/images/floor-plans/vaibhava-ground.webp",
           legend: [
             "Entrance lobby",
             "Living room",
@@ -48,7 +48,7 @@ export const utsav = {
           ],
         },
         first: {
-          image: "/images/plans/vaibhava-first.webp",
+          image: "/images/floor-plans/vaibhava-first.webp",
           legend: [
             "Family living",
             "Master bedroom 1",
@@ -72,7 +72,7 @@ export const utsav = {
       image: "/images/villa-samruddhi.webp",
       plans: {
         stilt: {
-          image: "/images/plans/samruddhi-stilt.webp",
+          image: "/images/floor-plans/samruddhi-stilt.webp",
           legend: [
             "Car parking",
             "Guest bedroom",
@@ -83,7 +83,7 @@ export const utsav = {
           ],
         },
         ground: {
-          image: "/images/plans/samruddhi-ground.webp",
+          image: "/images/floor-plans/samruddhi-ground.webp",
           legend: [
             "Entrance lobby",
             "Living room",
@@ -96,7 +96,7 @@ export const utsav = {
           ],
         },
         first: {
-          image: "/images/plans/samruddhi-first.webp",
+          image: "/images/floor-plans/samruddhi-first.webp",
           legend: [
             "Family living",
             "Balcony",
@@ -121,11 +121,11 @@ export const utsav = {
       image: "/images/villa-sambhrama.webp",
       plans: {
         stilt: {
-          image: "/images/plans/sambhrama-stilt.webp",
+          image: "/images/floor-plans/sambhrama-stilt.webp",
           legend: ["Car parking", "Guest bedroom", "Attached toilet", "Lift provision"],
         },
         ground: {
-          image: "/images/plans/sambhrama-ground.webp",
+          image: "/images/floor-plans/sambhrama-ground.webp",
           legend: [
             "Living room",
             "Bedroom",
@@ -136,7 +136,7 @@ export const utsav = {
           ],
         },
         first: {
-          image: "/images/plans/sambhrama-first.webp",
+          image: "/images/floor-plans/sambhrama-first.webp",
           legend: [
             "Family living",
             "Master bedroom 1",
@@ -159,7 +159,7 @@ export const utsav = {
       image: "/images/villa-harsha.webp",
       plans: {
         stilt: {
-          image: "/images/plans/nirvana-stilt.webp",
+          image: "/images/floor-plans/nirvana-stilt.webp",
           legend: [
             "Car parking",
             "Guest bedroom",
@@ -170,7 +170,7 @@ export const utsav = {
           ],
         },
         ground: {
-          image: "/images/plans/nirvana-ground.webp",
+          image: "/images/floor-plans/nirvana-ground.webp",
           legend: [
             "Living room",
             "Dining",
@@ -183,7 +183,7 @@ export const utsav = {
           ],
         },
         first: {
-          image: "/images/plans/nirvana-first.webp",
+          image: "/images/floor-plans/nirvana-first.webp",
           legend: [
             "Family living",
             "Lift provision",
@@ -208,7 +208,7 @@ export const utsav = {
       image: "/images/villa-mangala.webp",
       plans: {
         stilt: {
-          image: "/images/plans/sreshta-stilt.webp",
+          image: "/images/floor-plans/sreshta-stilt.webp",
           legend: [
             "Car parking",
             "Guest bedroom",
@@ -218,7 +218,7 @@ export const utsav = {
           ],
         },
         ground: {
-          image: "/images/plans/sreshta-ground.webp",
+          image: "/images/floor-plans/sreshta-ground.webp",
           legend: [
             "Living room",
             "Dining",
@@ -230,7 +230,7 @@ export const utsav = {
           ],
         },
         first: {
-          image: "/images/plans/sreshta-first.webp",
+          image: "/images/floor-plans/sreshta-first.webp",
           legend: [
             "Family living",
             "Balcony",
@@ -255,7 +255,7 @@ export const utsav = {
       image: "/images/villa-vijaya.webp",
       plans: {
         stilt: {
-          image: "/images/plans/soham-stilt.webp",
+          image: "/images/floor-plans/soham-stilt.webp",
           legend: [
             "Car parking",
             "Guest bedroom",
@@ -265,7 +265,7 @@ export const utsav = {
           ],
         },
         ground: {
-          image: "/images/plans/soham-ground.webp",
+          image: "/images/floor-plans/soham-ground.webp",
           legend: [
             "Living room",
             "Dining",
@@ -277,7 +277,7 @@ export const utsav = {
           ],
         },
         first: {
-          image: "/images/plans/soham-first.webp",
+          image: "/images/floor-plans/soham-first.webp",
           legend: [
             "Family living",
             "Master bedroom 1",
